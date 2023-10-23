@@ -1,0 +1,235 @@
+// LTR RTL
+
+@mixin rtl($property, $ltr-value, $rtl-value) {
+    #{$property}: $ltr-value;
+
+    [dir="rtl"] & {
+        #{$property}: $rtl-value;
+    }
+}
+
+// flex-box
+@mixin flex($position) {
+    display: flex;
+    justify-content: $position;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+@mixin flex_box($ai: stretch, $jc: start, $fd: row, $fw: nowrap) {
+    display: flex;
+    flex-direction: $fd;
+    align-items: $ai;
+    justify-content: $jc;
+    flex-wrap: $fw;
+}
+
+@mixin img-adjust {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin font($font-size, $font-weight, $color) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    color: $color;
+}
+
+@mixin list($style, $margin, $padding) {
+    list-style: $style;
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin display($display: initial, $visibility: visible) {
+    display: $display;
+    visibility: $visibility;
+}
+
+@mixin circle($width, $height, $line-height, $center, $bor-radius) {
+    width: $width;
+    height: $height;
+    line-height: $line-height;
+    text-align: center;
+    border-radius: 50%;
+}
+
+// Transition
+@mixin transition($property, $duration: 0.3s, $transition: ease) {
+    -moz-transition: $property $duration $transition;
+    -webkit-transition: $property $duration $transition;
+    -o-transition: $property $duration $transition;
+    transition: $property $duration $transition;
+}
+// Square
+@mixin square($size, $radius: 0) {
+    width: $size;
+    height: $size;
+    @if $radius != 0 {
+        border-radius: $radius;
+    }
+}
+
+// Keyframes
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+// ====================
+//  Media queries Mix
+// ====================
+
+// xl-device=====
+
+@mixin fifteen-down-device {
+    @media (max-width: 1500px) {
+        @content;
+    }
+}
+
+@mixin xxl-down-device {
+    @media (max-width: 1399px) {
+        @content;
+    }
+}
+
+@mixin xl-down-device {
+    @media (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin xxl-device {
+    @media (min-width: 1400px) and (max-width: 1599px) {
+        @content;
+    }
+}
+
+@mixin xl-device {
+    @media (min-width: 1200px) and (max-width: 1399px) {
+        @content;
+    }
+}
+
+@mixin lg-device {
+    @media (min-width: 992px) and (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin lg-up-device {
+    @media (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin lg-down-device {
+    @media (max-width: 991px) {
+        @content;
+    }
+}
+
+// md-device============
+@mixin md-device {
+    @media (min-width: 768px) and (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin md-up-device {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin md-down-device {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+// sm-device
+@mixin sm-device {
+    @media (min-width: 576px) and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin sm-down-device {
+    @media (max-width: 576px) {
+        @content;
+    }
+}
+
+@mixin shadow-1() {
+    box-shadow: 0 3px 15px rgba(29, 38, 38, 0.0309803922);
+}
+@mixin shadow-2() {
+    box-shadow: 0 3px 15px rgba(29, 38, 38, 0.09);
+}
+
+@mixin transition-3 {
+    transition: 0.3s ease;
+}
+@mixin transition-4 {
+    transition: 0.4s ease;
+}
+@mixin transition-5 {
+    transition: 0.5s ease;
+}
+
+@mixin border {
+    border: 1px solid $color-border;
+}
+
+@mixin linear-text1(){
+    background: linear-gradient(45deg, var(--gradient-4),var(--gradient-5),var(--gradient-6) 80%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+// Border gradient
+@mixin border-gradient {
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(125.24deg, rgba(130, 15, 270,0.3) 0%, rgba(75, 77, 250,0.3) 30.27%, rgba(64, 174, 252,0.3) 100%) 1;
+}
+
+@mixin border-gradient-light {
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(125.24deg, rgba(130, 15, 270,0.1) 0%, rgba(75, 77, 250,0.1) 30.27%, rgba(64, 174, 252,0.1) 100%) 1;
+    
+}
+
+@mixin linear-bg{
+    background: linear-gradient(170deg,var(--color-primary-light1) 9%,var(--color-primary-light1) 100%),radial-gradient(100% 100% at 30% 10%,var(--color-primary-light1) 0,var(--color-secondary-light1) 100%),linear-gradient(135deg,var(--color-secondary-light1) 0,var(--color-primary-light1) 50%),radial-gradient(100% 100% at 70% 0,var(--color-secondary-light1) 0,transparent 100%),linear-gradient(280deg,var(--color-primary-light1) 0,
+  transparent 100%);
+}
+
+@mixin linear-bg-2(){
+    background-image: linear-gradient(120.24deg, $gradient-3 15%, $gradient-2 60.27%, $gradient-1 100%);
+}
+@mixin linear-bg-light(){
+    background-image: linear-gradient(125.24deg, rgba(130, 15, 270,0.1) 0%, rgba(75, 77, 250,0.1) 30.27%, rgba(64, 174, 252,0.1) 100%);
+    background-color: $card-bg;
+}
+@mixin linear-bg-lighter(){
+    background-image: linear-gradient(125.24deg, rgba(130, 15, 270,0.08) 0%, rgba(75, 77, 250,0.08) 30.27%, rgba(64, 174, 252,0.08) 100%);
+}
+@mixin drop-shadow(){
+    filter: drop-shadow(3px 10px 10px rgba(0,0,0,0.05));
+}

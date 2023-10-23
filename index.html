@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="en" color-scheme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="./assets/css/line-awesome.min.css" />
+  <link rel="stylesheet" href="./assets/css/flag-icons.css" />
+  <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./assets/css/odometer.css">
+  <link rel="stylesheet" href="./assets/css/main.css" />
+</head>
+
+<body>
+
+  <section class="topbar">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="topbar-left">
+            <ul class="d-flex">
+              <li><a href="mailto:info@example.com"><i class="bi bi-envelope"></i>info@example.com</a></li>
+              <li><a href="tel:0967457934"><i class="bi bi-telephone"></i>0967457934</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6 d-flex justify-content-end align-items-cener">
+          <div class="dropdown-language">
+            <div class="dropdown">
+              <div class="lan-select" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="flag-icon-fr flag-icon flag-icon-squared rounded-circle "></i>
+              </div>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a href="#" class="dropdown-item">
+                    <i class="flag-icon-us flag-icon flag-icon-squared rounded-circle "></i>
+                    <span class="align-middle">English</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item">
+                    <i class="flag-icon-fr flag-icon flag-icon-squared rounded-circle "></i>
+                    <span class="align-middle">France</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item">
+                    <i class="flag-icon-de flag-icon flag-icon-squared rounded-circle"></i>
+                    <span class="align-middle">German</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item">
+                    <i class="flag-icon-pt flag-icon flag-icon-squared rounded-circle "></i>
+                    <span class="align-middle">Portuguese</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a href="signin.html" class="i-btn btn--sm btn--primary">Sign In</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- header -->
+  <header class="header-area style-1">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="header-left">
+        <button class="header-item-btn sidebar-btn d-lg-none d-block">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 512 512"
+            style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+            <g>
+              <path
+                d="M492 236H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zM492 76H20C8.954 76 0 84.954 0 96s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zM492 396H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20z"
+                data-original="#000000" class=""></path>
+            </g>
+          </svg>
+        </button>
+
+        <div class="header-logo d-sm-block d-none">
+          <a href="index.html"><img alt="image" class="img-fluid" src="assets/images/logo.png" /></a>
+        </div>
+      </div>
+
+      <div class="main-nav">
+        <div class="mobile-logo-area d-lg-none d-flex justify-content-between align-items-center">
+          <div class="mobile-logo-wrap">
+            <img alt="image" src="assets/images/logo.png" />
+          </div>
+          <div class="menu-close-btn">
+            <i class="bi bi-x-lg"></i>
+          </div>
+        </div>
+        <ul class="menu-list ">
+          <li class="menu-item-has-children">
+            <a href="index.html" class="drop-down active">Home</a>
+          </li>
+
+          <li class="menu-item-has-children">
+            <a href="#" class="drop-down">Pages</a><i class="bi bi-chevron-down dropdown-icon"></i>
+            <ul class="sub-menu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="signup.html">Sign Up</a></li>
+              <li><a href="signin.html">Sign In</a></li>
+              <li><a href="error.html">Error</a></li>
+            </ul>
+          </li>
+
+          <li class="menu-item-has-children">
+            <a href="#" class="drop-down">Services</a>
+            <i class="bi bi-chevron-down dropdown-icon"></i>
+            <ul class="sub-menu">
+              <li><a href="services.html">Services</a></li>
+              <li><a href="service-details.html">Service Details</a></li>
+            </ul>
+          </li>
+
+          <li class="menu-item-has-children">
+            <a href="#">Blog</a><i class="bi bi-chevron-down dropdown-icon"></i>
+            <ul class="sub-menu">
+              <li><a href="blog-details.html">Blog Details</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="menu-item-has-children">
+            <a href="user-dashboard.html" class="drop-down">Dashboard</a>
+            <i class="bi bi-chevron-down dropdown-icon"></i>
+            <ul class="sub-menu">
+              <li><a href="user-dashboard.html" class="drop-down">Dashboard</a></li>
+              <li><a href="user-all-order.html" class="drop-down">All Order</a></li>
+              <li><a href="user-creat-order.html" class="drop-down">Create Order</a></li>
+              <li><a href="user-mass-order.html" class="drop-down">Mass Order</a></li>
+              <li><a href="user-drip-order.html" class="drop-down">Drip Order</a></li>
+              <li><a href="user-refill-order.html" class="drop-down">Refill Order</a></li>
+              <li><a href="user-add-payment.html" class="drop-down">Add-payment</a></li>
+              <li><a href="user-fund-history.html" class="drop-down">Fund History</a></li>
+              <li><a href="user-services.html" class="drop-down">User Servivce</a></li>
+              <li><a href="user-transaction.html" class="drop-down">Transaction</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="side-bar-bottom d-lg-none">
+          <a href="signin.html" class="i-btn btn--lg btn--white capsuled d-flex w-100">Sign In</a>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <button class=" header-item-btn search-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 511.902 511.902"
+            style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+            <g>
+              <path
+                d="M506.806 481.731 368.551 343.474c-.008-.008-.008-.02 0-.027a207.04 207.04 0 0 0 48.903-124.34C423.403 95.262 324.852-4.427 200.948.152 91.809 4.283 4.283 91.809.152 200.948-4.426 324.853 95.264 423.404 219.11 417.451a207.055 207.055 0 0 0 124.335-48.902.021.021 0 0 1 .028 0l138.258 138.257c6.978 6.87 18.205 6.783 25.075-.195 6.795-6.902 6.795-17.979 0-24.88zM39.969 249.076c-13.611-60.757 4.168-120.719 46.279-162.829s102.071-59.89 162.83-46.278c57.484 12.882 115.769 71.162 128.652 128.64 13.619 60.764-4.162 120.733-46.275 162.846s-102.085 59.894-162.849 46.273c-57.478-12.884-115.755-71.173-128.637-128.652z"
+                data-original="#000000" class=""></path>
+            </g>
+          </svg>
+        </button>
+
+        <button class=" header-item-btn theme-btn">
+          <i class="bi bi-brightness-high"></i>
+        </button>
+
+        <button class=" header-item-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 512 512"
+            style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+            <g>
+              <path
+                d="M128 102.4c0-14.138 11.462-25.6 25.6-25.6h332.8c14.138 0 25.6 11.462 25.6 25.6S500.538 128 486.4 128H153.6c-14.138 0-25.6-11.463-25.6-25.6zm358.4 128H25.6C11.462 230.4 0 241.863 0 256c0 14.138 11.462 25.6 25.6 25.6h460.8c14.138 0 25.6-11.462 25.6-25.6 0-14.137-11.462-25.6-25.6-25.6zm0 153.6H256c-14.137 0-25.6 11.462-25.6 25.6 0 14.137 11.463 25.6 25.6 25.6h230.4c14.138 0 25.6-11.463 25.6-25.6 0-14.138-11.462-25.6-25.6-25.6z"
+                data-original="#000000" class=""></path>
+            </g>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner section -->
+  <div class="banner-section" id="banner"
+    style="background: linear-gradient(180deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5),rgba(0, 0, 0,0.5)),url('assets/images/bg/banner3.jpg');background-size: cover;background-position: center center;">
+    <div class="banner-circle">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512"
+        xml:space="preserve" class="">
+        <g>
+          <path
+            d="M437.02 74.98C388.667 26.628 324.38 0 256 0S123.333 26.628 74.98 74.98C26.628 123.333 0 187.62 0 256s26.628 132.667 74.98 181.02C123.333 485.372 187.62 512 256 512s132.667-26.628 181.02-74.98C485.372 388.667 512 324.38 512 256s-26.628-132.667-74.98-181.02zM256 491.602c-129.911 0-235.602-105.69-235.602-235.602S126.089 20.398 256 20.398 491.602 126.089 491.602 256 385.911 491.602 256 491.602z"
+            data-original="#000000" class=""></path>
+          <path
+            d="M256 449.785c-106.853 0-193.785-86.932-193.785-193.785 0-5.633-4.566-10.199-10.199-10.199S41.817 250.367 41.817 256c0 118.101 96.083 214.183 214.183 214.183 5.633 0 10.199-4.566 10.199-10.199s-4.566-10.199-10.199-10.199zM432.035 133.957c-24.38-35.103-58.218-61.874-97.856-77.422-5.24-2.056-11.162.526-13.219 5.771s.526 11.162 5.771 13.219C401.483 104.846 449.785 175.686 449.785 256c0 5.633 4.566 10.199 10.199 10.199s10.199-4.566 10.199-10.199c0-43.907-13.191-86.108-38.148-122.043zM280.619 43.217a217.267 217.267 0 0 0-24.619-1.4c-5.633 0-10.199 4.566-10.199 10.199S250.367 62.215 256 62.215c7.449 0 14.951.426 22.297 1.268.394.046.785.067 1.173.067 5.114 0 9.525-3.838 10.121-9.04.642-5.596-3.376-10.652-8.972-11.293z"
+            data-original="#000000" class=""></path>
+        </g>
+      </svg>
+    </div>
+    <div class="scroll-down">
+      <a href="#">
+        Scroll Down
+        <span>
+          <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 1H12M12 1V13M12 1L0.5 12"></path>
+          </svg>
+        </span>
+      </a>
+    </div>
+    <div class="banner-social">
+      <ul>
+        <li><a href="https://www.facebook.com/"><i class='bi bi-facebook'></i></a></li>
+        <li><a href="https://www.twitter.com/"><i class='bi bi-twitter'></i></a></li>
+        <li><a href="https://www.instagram.com/"><i class='bi bi-instagram'></i></a></li>
+        <li><a href="https://www.pinterest.com/"><i class='bi bi-pinterest'></i></a></li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-xl-6 col-lg-7">
+          <div class="banner-info position-relative">
+            <span>Manage Your Digital Business</span>
+            <h1>Global Trade Exchange Hub</h1>
+            <p class="banner-text">
+              We are a top-notch SMM company, specializing in social media
+              marketing. Our expert team crafts compelling strategies to
+              boost your online presence, engage your audience, and
+              generate impactful interactions. We drive tangible results
+              that empower your business in the digital realm.
+            </p>
+            <div class="d-flex justify-content-start flex-wrap align-items-center gap-lg-5 gap banner-btn">
+              <a href="services.html" class="i-btn btn--primary-outline btn--lg capsuled">View Services</a>
+              <div class="video-pluse">
+                <span style="--i:1;"></span>
+                <span style="--i:5;"></span>
+                <span style="--i:3;"></span>
+                <a data-fancybox href="https://youtu.be/hT_nvWreIhg"><i class="bi bi-play-fill"></i></a>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-5 offset-xl-1 col-lg-5 ps-lg-5">
+          <div class="banner-image mb-40" id="banner-image">
+            <img src="assets/images/bg/banner-img.png" alt="image" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- About section -->
+  <div class="about-us-section pt-110 pb-110">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <div class="section-title text-start mb-40">
+            <h2>Who We Are.</h2>
+            <p>
+              Discover the latest cryptocurrency prices and track market fluctuations, providing valuable insights for your trading decisions.
+            </p>
+          </div>
+          <div class="about-content">
+            <ul class="about-list">
+              <li><i class="bi bi-check2-circle"></i><span>The original and most valuable cryptocurrency, Bitcoin is often seen as a digital store of value and is widely traded.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Known for its smart contract capabilities, Ethereum is a platform for decentralized applications and offers diverse trading opportunities.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Ripple's XRP is designed for fast and low-cost international money transfers</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Cardano is known for its focus on sustainability, scalability, and interoperability in the blockchain space</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Often considered the "silver" to Bitcoin's gold, Litecoin offers faster transaction confirmation times and is actively traded.</span></li>
+            </ul>
+          </div>
+          <div class="row counter-wrap mt-5">
+            <div class="col-xl-4 col-lg-3 col-6">
+              <div class="counter-single text-center d-flex flex-column" style="background: linear-gradient(90deg,rgba(0,0,0,0.6),rgba(0, 0, 0,0.5)),url('assets/images/bg/counter-1.jpg');">
+                <div class="coundown d-flex flex-column">
+                  <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                    <h3 class="odometer" data-odometer-final="167">01</h3><i class="bi bi-plus"></i>
+                  </div>
+                  <p>Project Done</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-3 col-6">
+              <div class="counter-single text-center d-flex flex-column" style="background: linear-gradient(90deg,rgba(0,0,0,0.6),rgba(0, 0, 0,0.5)),url('assets/images/bg/counter-2.jpg');">
+                <div class="coundown d-flex flex-column">
+                  <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                    <h3 class="odometer" data-odometer-final="312">01</h3><i class="bi bi-plus"></i>
+                  </div>
+                  <p>Happy Client</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-3 col-6">
+              <div class="counter-single text-center d-flex flex-column" style="background: linear-gradient(90deg,rgba(0,0,0,0.6),rgba(0, 0, 0,0.5)),url('assets/images/bg/counter-3.jpg');">
+                <div class="coundown d-flex flex-column">
+                  <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                    <h3 class="odometer" data-odometer-final="104">01</h3><i class="bi bi-plus"></i>
+                  </div>
+                  <p>Advisor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 ps-lg-5">
+          <div class="about-image">
+            <img src="assets/images/bg/about.jpg" alt="image">
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="counter-section">
+    <div class="container-fluid">
+      <div class="row justify-content-end">
+        <div class="col-xl-6 col-lg-10">
+          <div class="row counter-wrap">
+            <div class="col-xl-4 col-lg-3 col-6">
+              <div class="counter-single text-center d-flex flex-column ">
+                <div class="counter-icon style-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 511 511.998"
+                    style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+                    <g>
+                      <path
+                        d="M501.426 238.11 419.203 197l82.223-41.113c14.707-7.352 14.722-28.414 0-35.778l-236-118a20.022 20.022 0 0 0-17.89 0l-236 118c-14.708 7.356-14.723 28.418 0 35.778L93.757 197l-82.223 41.11c-14.707 7.355-14.722 28.413 0 35.777L93.758 315l-82.223 41.11c-14.707 7.355-14.722 28.413 0 35.777l236 118a20.01 20.01 0 0 0 17.89 0l236-118c14.708-7.356 14.723-28.414 0-35.778L419.204 315l82.223-41.113c14.707-7.352 14.722-28.414 0-35.778zM256.48 42.36 447.758 138 256.48 233.637 65.203 138zM447.758 374 256.48 469.637 65.203 374l73.277-36.64 109.055 54.527a20.01 20.01 0 0 0 17.89 0l109.055-54.528zM256.48 351.637 65.203 256l73.277-36.64 109.055 54.527a20.01 20.01 0 0 0 17.89 0l109.055-54.528L447.758 256zm0 0"
+                        data-original="#000000" class=""></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="coundown d-flex flex-column">
+                  <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                    <h3 class="odometer" data-odometer-final="400">01</h3><i class="bi bi-plus-lg"></i>
+                  </div>
+                  <p>Project Done</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-3 col-6">
+              <div class="counter-single text-center d-flex flex-column">
+                <div class="counter-icon style-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 512 512"
+                    style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+                    <g>
+                      <path
+                        d="M256 0C114.615 0 0 114.615 0 256s114.615 256 256 256 256-114.615 256-256S397.385 0 256 0zm0 480C132.288 480 32 379.712 32 256S132.288 32 256 32s224 100.288 224 224-100.288 224-224 224z"
+                        data-original="#000000" class=""></path>
+                      <circle cx="176" cy="176" r="32" data-original="#000000" class=""></circle>
+                      <circle cx="336" cy="176" r="32" data-original="#000000" class=""></circle>
+                      <path
+                        d="M368 256c0 61.856-50.144 112-112 112s-112-50.144-112-112h-32c0 79.529 64.471 144 144 144s144-64.471 144-144h-32z"
+                        data-original="#000000" class=""></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="coundown d-flex flex-column">
+                  <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                    <h3 class="odometer" data-odometer-final="400">01</h3><i class="bi bi-plus-lg"></i>
+                  </div>
+                  <p>Happy Client</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-3 col-6">
+              <div class="counter-single text-center d-flex flex-column">
+                <div class="counter-icon style-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 1000 1000"
+                    style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+                    <g>
+                      <path
+                        d="M649.09 891h-94.54a16 16 0 0 1-16-16V511.36a16 16 0 0 1 16-16h94.54a16 16 0 0 1 16 16V875a16 16 0 0 1-16 16zm-78.54-32h62.54V527.36h-62.54zM445.45 891h-94.54a16 16 0 0 1-16-16V620.45a16 16 0 0 1 16-16h94.54a16 16 0 0 1 16 16V875a16 16 0 0 1-16 16zm-78.54-32h62.54V636.45h-62.54zM241.82 891h-94.55a16 16 0 0 1-16-16V729.55a16 16 0 0 1 16-16h94.55a16 16 0 0 1 16 16V875a16 16 0 0 1-16 16zm-78.55-32h62.55V745.55h-62.55zM852.73 891h-94.55a16 16 0 0 1-16-16V402.27a16 16 0 0 1 16-16h94.55a16 16 0 0 1 16 16V875a16 16 0 0 1-16 16zm-78.55-32h62.55V418.27h-62.55zM202.45 582.86a16 16 0 0 1-13.87-8l-56.73-98.26a16 16 0 0 1 5.86-21.86l439.62-253.81-37.82-65.51a16 16 0 0 1 13.73-24L854.17 109h.12a16 16 0 0 1 13.8 24.11l-152.56 259.4a16 16 0 0 1-13.8 7.89h-.06a16 16 0 0 1-13.79-8l-37.82-65.51-439.63 253.82a15.87 15.87 0 0 1-7.98 2.15zm-34.89-108.4L208.29 545l439.63-253.82a16 16 0 0 1 21.85 5.82l32.09 55.58 124.33-211.35L581 143.2l32 55.58a16 16 0 0 1-5.85 21.86z"
+                        data-original="#000000" class=""></path>
+                      <path d="M900 891H100a16 16 0 0 1 0-32h800a16 16 0 0 1 0 32z" data-original="#000000" class="">
+                      </path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="coundown d-flex flex-column">
+                  <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                    <h3 class="odometer" data-odometer-final="400">01</h3><i class="bi bi-plus-lg"></i>
+                  </div>
+                  <p>Advisor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- currecty section start -->
+
+  <div class="today-currency-section pt-110 pb-110">
+
+    <div class="coin-flip">
+      <div class="coin-tails">
+        <img src="assets/images/bg/coin-front.png">
+      </div>
+      <div class="coin-heads">
+        <img src="assets/images/bg/coin-back.png">
+      </div>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7 col-md-8">
+          <div class="section-title text-center mb-60">
+            <h2>Currency Market Prices Today.</h2>
+            <p>
+              Discover the latest cryptocurrency prices and track market fluctuations, providing valuable insights for your trading decisions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="table-container">
+        <table id="myTable" class="table">
+          <thead>
+            <tr>
+              <th scope="col">S.N</th>
+              <th scope="col">Name</th>
+              <th scope="col">1h%</th>
+              <th scope="col">Price</th>
+              <th scope="col">7d%</th>
+              <th scope="col">Market Cap</th>
+              <th scope="col">24h%</th>
+              <th scope="col">Volume(24h)</th>
+              <th scope="col">Circulating Supply</th>
+            </tr>
+          </thead>
+      
+          <tbody>
+            <tr>
+              <td>
+                01
+              </td>
+              <td>
+                <div class="user-meta-info">
+                  <h6>BTC</h6>
+                  <p>Bitcoin</p>
+                </div>
+              </td>
+              <td><span class="i-badge btn--danger capsuled">77%</span></td>
+              <td>
+                25,987.40 USD
+              </td>
+              <td><span class="i-badge btn--success capsuled">3.14 %</span></td>
+              <td >$464,017,027,468.94</td>
+              <td ><span class="i-badge btn--success capsuled">-3.5%</span></td>
+              <td >
+                $33,289,028,531.20
+              </td>
+              <td>
+                0.00 BTC
+              </td>
+            </tr>
+            <tr>
+              <td>
+                01
+              </td>
+              <td>
+                <div class="user-meta-info">
+                  <h6>BTC</h6>
+                  <p>Bitcoin</p>
+                </div>
+              </td>
+              <td><span class="i-badge btn--danger capsuled">77%</span></td>
+              <td>
+                25,987.40 USD
+              </td>
+              <td><span class="i-badge btn--success capsuled">3.14 %</span></td>
+              <td >$464,017,027,468.94</td>
+              <td ><span class="i-badge btn--success capsuled">-3.5%</span></td>
+              <td >
+                $33,289,028,531.20
+              </td>
+              <td>
+                0.00 BTC
+              </td>
+            </tr>
+            <tr>
+              <td>
+                01
+              </td>
+              <td>
+                <div class="user-meta-info">
+                  <h6>BTC</h6>
+                  <p>Bitcoin</p>
+                </div>
+              </td>
+              <td><span class="i-badge btn--danger capsuled">77%</span></td>
+              <td>
+                25,987.40 USD
+              </td>
+              <td><span class="i-badge btn--success capsuled">3.14 %</span></td>
+              <td >$464,017,027,468.94</td>
+              <td ><span class="i-badge btn--success capsuled">-3.5%</span></td>
+              <td >
+                $33,289,028,531.20
+              </td>
+              <td>
+                0.00 BTC
+              </td>
+            </tr>
+            <tr>
+              <td>
+                01
+              </td>
+              <td>
+                <div class="user-meta-info">
+                  <h6>BTC</h6>
+                  <p>Bitcoin</p>
+                </div>
+              </td>
+              <td><span class="i-badge btn--danger capsuled">77%</span></td>
+              <td>
+                25,987.40 USD
+              </td>
+              <td><span class="i-badge btn--success capsuled">3.14 %</span></td>
+              <td >$464,017,027,468.94</td>
+              <td ><span class="i-badge btn--success capsuled">-3.5%</span></td>
+              <td >
+                $33,289,028,531.20
+              </td>
+              <td>
+                0.00 BTC
+              </td>
+            </tr>
+            <tr>
+              <td>
+                01
+              </td>
+              <td>
+                <div class="user-meta-info">
+                  <h6>BTC</h6>
+                  <p>Bitcoin</p>
+                </div>
+              </td>
+              <td><span class="i-badge btn--danger capsuled">77%</span></td>
+              <td>
+                25,987.40 USD
+              </td>
+              <td><span class="i-badge btn--success capsuled">3.14 %</span></td>
+              <td >$464,017,027,468.94</td>
+              <td ><span class="i-badge btn--success capsuled">-3.5%</span></td>
+              <td >
+                $33,289,028,531.20
+              </td>
+              <td>
+                0.00 BTC
+              </td>
+            </tr>
+            <tr>
+              <td>
+                01
+              </td>
+              <td>
+                <div class="user-meta-info">
+                  <h6>BTC</h6>
+                  <p>Bitcoin</p>
+                </div>
+              </td>
+              <td><span class="i-badge btn--danger capsuled">77%</span></td>
+              <td>
+                25,987.40 USD
+              </td>
+              <td><span class="i-badge btn--success capsuled">3.14 %</span></td>
+              <td >$464,017,027,468.94</td>
+              <td ><span class="i-badge btn--success capsuled">-3.5%</span></td>
+              <td >
+                $33,289,028,531.20
+              </td>
+              <td>
+                0.00 BTC
+              </td>
+            </tr>
+            <tr>
+              <td>
+                01
+              </td>
+              <td>
+                <div class="user-meta-info">
+                  <h6>BTC</h6>
+                  <p>Bitcoin</p>
+                </div>
+              </td>
+              <td><span class="i-badge btn--danger capsuled">77%</span></td>
+              <td>
+                25,987.40 USD
+              </td>
+              <td><span class="i-badge btn--success capsuled">3.14 %</span></td>
+              <td >$464,017,027,468.94</td>
+              <td ><span class="i-badge btn--success capsuled">-3.5%</span></td>
+              <td >
+                $33,289,028,531.20
+              </td>
+              <td>
+                0.00 BTC
+              </td>
+            </tr>
+            <tr>
+              <td>
+                01
+              </td>
+              <td>
+                <div class="user-meta-info">
+                  <h6>BTC</h6>
+                  <p>Bitcoin</p>
+                </div>
+              </td>
+              <td><span class="i-badge btn--danger capsuled">77%</span></td>
+              <td>
+                25,987.40 USD
+              </td>
+              <td><span class="i-badge btn--success capsuled">3.14 %</span></td>
+              <td >$464,017,027,468.94</td>
+              <td ><span class="i-badge btn--success capsuled">-3.5%</span></td>
+              <td >
+                $33,289,028,531.20
+              </td>
+              <td>
+                0.00 BTC
+              </td>
+            </tr>
+            <tr>
+              <td>
+                01
+              </td>
+              <td>
+                <div class="user-meta-info">
+                  <h6>BTC</h6>
+                  <p>Bitcoin</p>
+                </div>
+              </td>
+              <td><span class="i-badge btn--danger capsuled">77%</span></td>
+              <td>
+                25,987.40 USD
+              </td>
+              <td><span class="i-badge btn--success capsuled">3.14 %</span></td>
+              <td >$464,017,027,468.94</td>
+              <td ><span class="i-badge btn--success capsuled">-3.5%</span></td>
+              <td >
+                $33,289,028,531.20
+              </td>
+              <td>
+                0.00 BTC
+              </td>
+            </tr>
+            <tr>
+              <td>
+                01
+              </td>
+              <td>
+                <div class="user-meta-info">
+                  <h6>BTC</h6>
+                  <p>Bitcoin</p>
+                </div>
+              </td>
+              <td><span class="i-badge btn--danger capsuled">77%</span></td>
+              <td>
+                25,987.40 USD
+              </td>
+              <td><span class="i-badge btn--success capsuled">3.14 %</span></td>
+              <td >$464,017,027,468.94</td>
+              <td ><span class="i-badge btn--success capsuled">-3.5%</span></td>
+              <td >
+                $33,289,028,531.20
+              </td>
+              <td>
+                0.00 BTC
+              </td>
+            </tr>
+            <tr>
+              <td>
+                01
+              </td>
+              <td>
+                <div class="user-meta-info">
+                  <h6>BTC</h6>
+                  <p>Bitcoin</p>
+                </div>
+              </td>
+              <td><span class="i-badge btn--danger capsuled">77%</span></td>
+              <td>
+                25,987.40 USD
+              </td>
+              <td><span class="i-badge btn--success capsuled">3.14 %</span></td>
+              <td >$464,017,027,468.94</td>
+              <td ><span class="i-badge btn--success capsuled">-3.5%</span></td>
+              <td >
+                $33,289,028,531.20
+              </td>
+              <td>
+                0.00 BTC
+              </td>
+            </tr>
+            <tr>
+              <td>
+                01
+              </td>
+              <td>
+                <div class="user-meta-info">
+                  <h6>BTC</h6>
+                  <p>Bitcoin</p>
+                </div>
+              </td>
+              <td><span class="i-badge btn--danger capsuled">77%</span></td>
+              <td>
+                25,987.40 USD
+              </td>
+              <td><span class="i-badge btn--success capsuled">3.14 %</span></td>
+              <td >$464,017,027,468.94</td>
+              <td ><span class="i-badge btn--success capsuled">-3.5%</span></td>
+              <td >
+                $33,289,028,531.20
+              </td>
+              <td>
+                0.00 BTC
+              </td>
+            </tr>
+           
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+    <!-- currecty section end -->
+
+  <!-- choose us section -->
+  <div class="predict-section pt-110 pb-110">
+    <div class="container">
+      <div class="row justify-content-start">
+        <div class="col-lg-6 col-md-8">
+          <div class="section-title text-start mb-60">
+            <h2>We employ a variety of prediction methods.</h2>
+            <p>
+              Cutting-edge Features Designed to Boost Your Social Media
+              Marketing Efforts and Drive Remarkable Results for Your
+              Business.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid pl--continer">
+      <div class="row align-items-stretch gy-4">
+        <div class="col-xl-6">
+          <div class="choose-wrapper">
+            <div class="row g-3">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="choos-item">
+                  <div class="icon">
+                    <i class="bi bi-graph-up-arrow"></i>
+                  </div>
+                  <div class="content">
+                    <h4>Elliott Wave Analysis</h4>
+                    <p>Earn cashback on eligible purchases, credited to your account, and redeemable for future savings
+                      or rewards</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="choos-item">
+                  <div class="icon">
+                    <i class="bi bi-app-indicator"></i>
+                  </div>
+                  <div class="content">
+                    <h4>MACD and RSI Indicators</h4>
+                    <p>Earn cashback on eligible purchases, credited to your account, and redeemable for future savings
+                      or rewards</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="choos-item">
+                  <div class="icon">
+                    <i class="bi bi-fan"></i>
+                  </div>
+                  <div class="content">
+                    <h4>Turbo Speed</h4>
+                    <p>
+                      Security encompasses measures to protect against threats and ensure safety, often involving
+                      safeguards, protocols.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="choos-item">
+                  <div class="icon">
+                    <i class="bi bi-graph-up"></i>
+                  </div>
+                  <div class="content">
+                    <h4>Highlow Option</h4>
+                    <p>Deposit limits specify the maximum amount you can add to your account, providing financial
+                      control and responsible gambling.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="choos-item">
+                  <div class="icon">
+                    <i class="bi bi-briefcase"></i>
+                  </div>
+                  <div class="content">
+                    <h4>Trade</h4>
+                    <p>Our dedicated support team is available 24/7 to assist you with any inquiries or issues, ensuring
+                      a seamless experience.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="choos-item">
+                  <div class="icon">
+                    <i class="bi bi-currency-bitcoin"></i>
+                  </div>
+                  <div class="content">
+                    <h4>ICO and Token Sale</h4>
+                    <p>Our dedicated support team is available 24/7 to assist you with any inquiries or issues, ensuring
+                      a seamless experience.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 ps-lg-4">
+          <div class="choose-img">
+            <img src="assets/images/bg/choose-img2.jpg" alt="" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service section -->
+  <div class="service-section linear-bg pt-110 pb-110">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="section-title text-center mb-60">
+            <h2>What We Provide</h2>
+            <p>
+              Cutting-edge Features Designed to Boost Your Social Media
+              Marketing Efforts and Drive Remarkable Results for Your
+              Business.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center service-tab-wrapper">
+        <div class="col-lg-6">
+          <article class="tab-pane show active" id="category_tab1">
+            <img src="assets/images/service/service-1.jpg" alt="image">
+          </article>
+          <article class="tab-pane" id="category_tab2">
+            <img src="assets/images/service/service-3.jpg" alt="image">
+          </article>
+          <article class="tab-pane" id="category_tab3">
+            <img src="assets/images/service/service-2.jpg" alt="image">
+          </article>
+          <article class="tab-pane" id="category_tab4">
+            <img src="assets/images/service/service-4.jpg" alt="image">
+          </article>
+        </div>
+        <div class="col-lg-6 ps-lg-5">
+          <nav id="myTab" class="nav nav-pills flex-column service-title-wrap">
+            <a href="#category_tab1" data-bs-toggle="pill" class="active nav-link"><span>01. Best Payout</span><i class="bi bi-arrow-right-short"></i></a>
+            <a href="#category_tab2" data-bs-toggle="pill" class="nav-link"><span>02. Fund Access</span><i class="bi bi-arrow-right-short"></i></a>
+            <a href="#category_tab3" data-bs-toggle="pill" class="nav-link"><span>03. Cashback Option</span><i class="bi bi-arrow-right-short"></i></a>
+            <a href="#category_tab4" data-bs-toggle="pill" class="nav-link"><span>04. Amazing Support</span><i class="bi bi-arrow-right-short"></i></a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonial section -->
+  <div class="testimonial-section pt-110 pb-110" style="background: linear-gradient(90deg, rgba(255,255,255,0.94),rgba(255,255,255,0.94)),url('assets/images/bg/testi-bg.jpg');">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="section-title text-center mb-60">
+            <h2>What people Say</h2>
+            <p>
+              Cutting-edge Features Designed to Boost Your Social Media
+              Marketing Efforts and Drive Remarkable Results for Your
+              Business.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center mb-50">
+        <div class="col-10">
+          <div class="swiper testimonial-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <div class="quote">
+                    <i class="bi bi-quote"></i>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Trading with [Company Name] has been a game-changer. Their platform is user-friendly, and their support team is responsive and knowledgeable. We've achieved consistent profits thanks to their market analysis and strategies. Trustworthy and reliable, they've earned our long-term in our trading endeavors.
+                    </p>
+                    <div class="designation">
+                      <h6>Angelina Jami</h6>
+                      <span>UI/UX Designer</span>
+                    </div>
+                  </div>
+                  <div class="image">
+                    <img src="assets/images/testimonial/testi-1.jpg" alt="image" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <div class="quote">
+                    <i class="bi bi-quote"></i>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Their platform is user-friendly, and their support team is responsive and knowledgeable. We've achieved consistent profits thanks to their market analysis and strategies. Trustworthy and reliable, they've earned our long-term partnership and confidence in our trading endeavors.
+                    </p>
+                    <div class="designation">
+                      <h6>Robert Mugabe</h6>
+                      <span>Trader</span>
+                    </div>
+                  </div>
+                  <div class="image">
+                    <img src="assets/images/testimonial/testi-2.jpg" alt="image" />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <div class="quote">
+                    <i class="bi bi-quote"></i>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Our trading journey with [Company Name] has been remarkable. Their cutting-edge platform and valuable insights have consistently led to profitable results. Their dedication to client success and market expertise make them our top choice for all trading endeavors.
+                    </p>
+                    <div class="designation">
+                      <h6>Anderson Jami</h6>
+                      <span>UI/UX Designer</span>
+                    </div>
+                  </div>
+                  <div class="image">
+                    <img src="assets/images/testimonial/testi-3.jpg" alt="image" />
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="slider-arrows arrows-style-1 text-center d-flex flex-row justify-content-center align-items-center gap-3 w-100">
+          <div class="testi-prev swiper-arrow" tabindex="0" role="button" aria-label="Previous slide">
+            <i class="bi bi-arrow-left"></i>
+          </div>
+          <div class="testi-next swiper-arrow" tabindex="0" role="button" aria-label="Next slide">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- faq-section start -->
+
+  <div class="faq-section img-adjust pt-110 pb-110"
+    style="background: linear-gradient(30deg,rgba(0,0,0,0.8),rgba(0,0,0,0.8)) ,url('assets/images/bg/faq-bg.jpg');">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="section-title style-two text-center mb-60">
+            <h2>Common Queries</h2>
+            <p>
+              Common queries address typical concerns or questions people have, offering helpful, concise explanations
+              and solutions.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="faq-wrap style-border">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-1">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+                    <i class="bi bi-vector-pen"></i>
+                    What is trading in financial markets?
+                  </button>
+                </h2>
+                <div id="collapse-1" class="accordion-collapse collapse" aria-labelledby="heading-1">
+                  <div class="accordion-body">
+                    <p>
+                      Some of the
+                      strangest
+                      places on earth
+                      are also
+                      the
+                      most sublime:
+                      from the
+                      UFO-like dragon's
+                      blood
+                      trees
+                      in Yemen to a
+                      rainbow-colored
+                      hot
+                      spring in
+                      Yellowstone to a
+                      bridge
+                      in Germany that
+                      looks
+                      like a
+                      leftover prop
+                      from Lord
+                      of the Rings.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                    <i class="bi bi-globe"></i>
+                    How do I get started with trading?
+                  </button>
+                </h2>
+                <div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2">
+                  <div class="accordion-body">
+                    <p>
+                      Morbi aliquam
+                      quis quam
+                      in luctus.
+                      Nullam
+                      tincidunt
+                      pulvinar
+                      imperdiet. Sed
+                      varius, diam
+                      vitae
+                      posuere
+                      semper, libero
+                      ex
+                      hendrerit nunc,
+                      ac
+                      sagittis eros
+                      metus ut diam.
+                      Donec a
+                      nibh in libero
+                      maximus
+                      vehicula. Etiam
+                      sit amet
+                      condimentum
+                      erat.
+                      Pellentesque
+                      ultrices
+                      sagittis turpis,
+                      quis
+                      tempus
+                      ante viverra
+                      et.Morbi
+                      aliquam quis
+                      quam in
+                      luctus.
+                      Nullam tincidunt
+                      pulvinar
+                      imperdiet. Sed
+                      varius,
+                      diam vitae
+                      posuere
+                      semper,
+                      tincidunt
+                      pulvinar
+                      imperdiet. Sed
+                      varius,
+                      diam vitae
+                      posuere
+                      semper.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                    <i class="bi bi-people"></i>
+                    What is a trading strategy, and how do I develop one?
+                  </button>
+                </h2>
+                <div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="heading-3">
+                  <div class="accordion-body">
+                    <p>
+                      Morbi aliquam
+                      quis quam
+                      in luctus.
+                      Nullam
+                      tincidunt
+                      pulvinar
+                      imperdiet. Sed
+                      varius, diam
+                      vitae
+                      posuere
+                      semper, libero
+                      ex
+                      hendrerit nunc,
+                      ac
+                      sagittis eros
+                      metus ut diam.
+                      Donec a
+                      nibh in libero
+                      maximus
+                      vehicula. Etiam
+                      sit amet
+                      condimentum
+                      erat.
+                      Pellentesque
+                      ultrices
+                      sagittis turpis,
+                      quis
+                      tempus
+                      ante viverra
+                      et.Morbi
+                      aliquam quis
+                      quam in
+                      luctus.
+                      Nullam tincidunt
+                      pulvinar
+                      imperdiet. Sed
+                      varius,
+                      diam vitae
+                      posuere
+                      semper,
+                      tincidunt
+                      pulvinar
+                      imperdiet. Sed
+                      varius,
+                      diam vitae
+                      posuere
+                      semper.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-4">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+                    <i class="bi bi-briefcase"></i>
+                    What are the tax implications of trading?
+                  </button>
+                </h2>
+                <div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="heading-4">
+                  <div class="accordion-body">
+                    <p>Morbi aliquam quis
+                      quam in
+                      luctus. Nullam
+                      tincidunt
+                      pulvinar imperdiet.
+                      Sed
+                      varius, diam vitae
+                      posuere
+                      semper, libero ex
+                      hendrerit
+                      nunc, ac sagittis
+                      eros
+                      metus ut diam. Donec
+                      a nibh
+                      in libero maximus
+                      vehicula. Etiam sit
+                      amet
+                      condimentum erat.
+                      Pellentesque
+                      ultrices
+                      sagittis turpis,
+                      quis tempus
+                      ante viverra
+                      et.Morbi
+                      aliquam quis quam in
+                      luctus.
+                      Nullam tincidunt
+                      pulvinar
+                      imperdiet. Sed
+                      varius, diam
+                      vitae posuere
+                      semper,
+                      tincidunt pulvinar
+                      imperdiet.
+                      Sed varius, diam
+                      vitae
+                      posuere semper.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-5">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+                    <i class="bi bi-cart"></i>
+                    How can I avoid common trading mistakes?
+                  </button>
+                </h2>
+                <div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="heading-5">
+                  <div class="accordion-body">
+                    <p>
+                      Morbi aliquam
+                      quis quam
+                      in luctus.
+                      Nullam
+                      tincidunt
+                      pulvinar
+                      imperdiet. Sed
+                      varius, diam
+                      vitae
+                      posuere
+                      semper, libero
+                      ex
+                      hendrerit nunc,
+                      ac
+                      sagittis eros
+                      metus ut diam.
+                      Donec a
+                      nibh in libero
+                      maximus
+                      vehicula. Etiam
+                      sit amet
+                      condimentum
+                      erat.
+                      Pellentesque
+                      ultrices
+                      sagittis turpis,
+                      quis
+                      tempus
+                      ante viverra
+                      et.Morbi
+                      aliquam quis
+                      quam in
+                      luctus.
+                      Nullam tincidunt
+                      pulvinar
+                      imperdiet. Sed
+                      varius,
+                      diam vitae
+                      posuere
+                      semper,
+                      tincidunt
+                      pulvinar
+                      imperdiet. Sed
+                      varius,
+                      diam vitae
+                      posuere
+                      semper.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- faq-section end -->
+
+
+  <!-- Blog section -->
+  <div class="blog-section pt-110 pb-110">
+    <div class="container">
+      <div class="row justify-content-center g-4">
+        <div class="col-lg-5">
+          <div class="section-title text-center mb-60">
+            <h2>News & Blog</h2>
+            <p>
+              Cutting-edge Features Designed to Boost Your Social Media
+              Marketing Efforts and Drive Remarkable Results for Your
+              Business.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-5">
+          <div class="blog-item-one" style="background-image: url('assets/images/blog/blog-1.jpg');">
+            <div class="content">
+              <ul class="blog-meta-list">
+                <li><a href="#"><i class="bi bi-person-circle"></i>Anderson Gill</a></li>
+                <li><a href="#"><i class="bi bi-chat-left-text"></i>344</a></li>
+              </ul>
+              <h4 class="card-title mb-0"><a href="blog-details.html">Charting a Course to Financial Freedom: A Trader's
+                  Odyssey</a></h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="swiper blog-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="blog-item-two">
+                      <div class="image">
+                        <img src="assets/images/blog/blog-2.jpg" alt="image">
+                        <div class="date">
+                          <h5>27</h5>
+                          <p>DEC</p>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <ul class="blog-meta-list">
+                          <li><a href="#"><i class="bi bi-person-circle"></i>Anderson Gill</a></li>
+                          <li><a href="#"><i class="bi bi-chat-left-text"></i>344</a></li>
+                        </ul>
+                        <h4 class="card-title"><a href="blog-details.html">Market Volatility Surges as Trade Tariffs Take Effect</a></h4>
+                        <p>In the fast-paced world of trading, success hinges on timely analysis, prudent risk
+                          management
+                          ability.</p>
+                        <a href="blog-details.html" class="i-btn read-more-btn">Read More <i class="bi bi-arrow-up-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="blog-item-two">
+                      <div class="image">
+                        <img src="assets/images/blog/blog-3.jpg" alt="image">
+                      </div>
+                      <div class="content">
+                        <ul class="blog-meta-list">
+                          <li><a href="#"><i class="bi bi-person-circle"></i>Anderson Gill</a></li>
+                          <li><a href="#"><i class="bi bi-chat-left-text"></i>344</a></li>
+                        </ul>
+                        <h4 class="card-title"><a href="blog-details.html">Global Leaders Gather to Discuss Economic Agreements.</a></h4>
+                        <p>Trading is a constant pursuit of opportunity and precision. It's about reading charts.</p>
+                        <a href="blog-details.html" class="i-btn read-more-btn">Read More <i class="bi bi-arrow-up-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="blog-item-two">
+                      <div class="image">
+                        <img src="assets/images/blog/blog-3.jpg" alt="image">
+                      </div>
+                      <div class="content">
+                        <ul class="blog-meta-list">
+                          <li><a href="#"><i class="bi bi-person-circle"></i>Anderson Gill</a></li>
+                          <li><a href="#"><i class="bi bi-chat-left-text"></i>344</a></li>
+                        </ul>
+                        <h4 class="card-title"><a href="blog-details.html">Traders React to Latest Trade Regulations and Market Shifts</a></h4>
+                        <p>Trading is a constant pursuit of opportunity and precision. It's about reading charts.</p>
+                        <a href="blog-details.html" class="i-btn read-more-btn">Read More <i class="bi bi-arrow-up-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="pt-90 position-relative"
+    style="background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.95)) ,url('assets/images/bg/footer-bg.jpg')">
+    <div class="banner-dot">
+    </div>
+    <div class="banner-circle">
+
+    </div>
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-item">
+            <a href="#" class="footer-logo d-block mb-20">
+              <img src="assets/images/logo.png" alt />
+            </a>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Inventore animi atque, maiores ex magnam sint earum
+              blanditiis ducimus, necessitatibus sit vero iste. Quia,
+              possimus ipsa.
+            </p>
+          </div>
+          <div class="footer-social">
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 155.139 155.139"
+                style="enable-background: new 0 0 512 512" xml:space="preserve" class>
+                <g>
+                  <path
+                    d="M89.584 155.139V84.378h23.742l3.562-27.585H89.584V39.184c0-7.984 2.208-13.425 13.67-13.425l14.595-.006V1.08C115.325.752 106.661 0 96.577 0 75.52 0 61.104 12.853 61.104 36.452v20.341H37.29v27.585h23.814v70.761h28.48z"
+                    style data-original="#010002" class></path>
+                </g>
+              </svg>
+            </a>
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 210 210"
+                style="enable-background: new 0 0 512 512" xml:space="preserve" class>
+                <g>
+                  <path
+                    d="M0 105C0 47.103 47.103 0 105 0c23.383 0 45.515 7.523 64.004 21.756l-24.4 31.696C133.172 44.652 119.477 40 105 40c-35.841 0-65 29.159-65 65s29.159 65 65 65c28.867 0 53.398-18.913 61.852-45H105V85h105v20c0 57.897-47.103 105-105 105S0 162.897 0 105z"
+                    data-original="#000000" class></path>
+                </g>
+              </svg>
+            </a>
+
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 24 24"
+                style="enable-background: new 0 0 512 512" xml:space="preserve" class>
+                <g>
+                  <path
+                    d="M21.534 7.113A9.822 9.822 0 0 0 24 4.559v-.001c-.893.391-1.843.651-2.835.777a4.894 4.894 0 0 0 2.165-2.719 9.845 9.845 0 0 1-3.12 1.191 4.919 4.919 0 0 0-8.511 3.364c0 .39.033.765.114 1.122-4.09-.2-7.71-2.16-10.142-5.147a4.962 4.962 0 0 0-.674 2.487c0 1.704.877 3.214 2.186 4.089A4.863 4.863 0 0 1 .96 9.116v.054a4.943 4.943 0 0 0 3.942 4.835c-.401.11-.837.162-1.29.162-.315 0-.633-.018-.931-.084.637 1.948 2.447 3.381 4.597 3.428a9.89 9.89 0 0 1-6.101 2.098c-.403 0-.79-.018-1.177-.067a13.856 13.856 0 0 0 7.548 2.208c8.683 0 14.342-7.244 13.986-14.637z"
+                    data-original="#000000" class></path>
+                </g>
+              </svg>
+            </a>
+
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 100 100"
+                style="enable-background: new 0 0 512 512" xml:space="preserve" class>
+                <g>
+                  <path
+                    d="M90 90V60.7c0-14.4-3.1-25.4-19.9-25.4-8.1 0-13.5 4.4-15.7 8.6h-.2v-7.3H38.3V90h16.6V63.5c0-7 1.3-13.7 9.9-13.7 8.5 0 8.6 7.9 8.6 14.1v26H90zM11.3 36.6h16.6V90H11.3zM19.6 10c-5.3 0-9.6 4.3-9.6 9.6s4.3 9.7 9.6 9.7 9.6-4.4 9.6-9.7-4.3-9.6-9.6-9.6z"
+                    data-original="#000000" class></path>
+                </g>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5 class="footer-title">Quick Link</h5>
+          <ul class="footer-menu">
+            <li>
+              <a href="#"><i class="bi bi-dot"></i>Home</a>
+            </li>
+
+            <li>
+              <a href="#"><i class="bi bi-dot"></i>About</a>
+            </li>
+
+            <li>
+              <a href="#"><i class="bi bi-dot"></i>Service</a>
+            </li>
+
+            <li>
+              <a href="#"><i class="bi bi-dot"></i>Blog</a>
+            </li>
+
+            <li>
+              <a href="#"><i class="bi bi-dot"></i>Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5 class="footer-title">Important Link</h5>
+          <ul class="footer-menu">
+            <li>
+              <a href="#"><i class="bi bi-dot"></i>Home</a>
+            </li>
+
+            <li>
+              <a href="#"><i class="bi bi-dot"></i>About</a>
+            </li>
+
+            <li>
+              <a href="#"><i class="bi bi-dot"></i>Service</a>
+            </li>
+
+            <li>
+              <a href="#"><i class="bi bi-dot"></i>Blog</a>
+            </li>
+
+            <li>
+              <a href="#"><i class="bi bi-dot"></i>Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-title">Newsletter</h5>
+          <div class="newsletter-box row align-items-center g-4">
+            <p>Stay informed with our concise, weekly newsletter for the latest updates.</p>
+            <form action="#">
+              <div class="input-wrapper">
+                <input type="text" placeholder="Enter Your Email" />
+                <button><i class="bi bi-send"></i></button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-middle">
+      <div class="container">
+        <div class="footer-address-wrapper">
+          <div class="address-item">
+            <div class="icon">
+              <i class="bi bi-envelope"></i>
+            </div>
+            <h6>Email</h6>
+            <a class="address" href="mailto:info@gmail.col">info@gmail.com</a>
+          </div>
+          <div class="address-item">
+            <div class="icon">
+              <i class="bi bi-geo-alt"></i>
+            </div>
+            <h6>Location</h6>
+            <div class="address">Germany — 785 15h Street. Berlin.</div>
+          </div>
+          <div class="address-item">
+            <div class="icon">
+              <i class="bi bi-telephone"></i>
+            </div>
+            <h6>Phone</h6>
+            <a class="address" href="tel:098454668">098454668</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="text-center">
+          <p>All rights reserved © 2023 by iGen</p>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- search Bar-->
+  <div class="search-bar">
+    <div class="overlayClick"></div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="search-box">
+            <form action="">
+              <input type="text" placeholder="Search here" id="search-input">
+              <button><i class="bi bi-search"></i></button>
+            </form>
+            <span><i class="bi bi-x"></i></span>
+
+            <div class="search-history">
+              <h6>26 results found</h6>
+              <ul>
+                <li><a href="#"><i class="bi bi-person"></i>User Porfile Settings</a></li>
+                <li><a href="#"><i class="bi bi-person"></i>User Porfile Settings</a></li>
+                <li><a href="#"><i class="bi bi-person"></i>User Porfile Settings</a></li>
+                <li><a href="#"><i class="bi bi-person"></i>User Porfile Settings</a></li>
+                <li><a href="#"><i class="bi bi-person"></i>User Porfile Settings</a></li>
+                <li><a href="#"><i class="bi bi-person"></i>User Porfile Settings</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- offcanvas -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header mb-50">
+      <div class="mobile-logo-wrap">
+        <a href="index.html">
+          <img alt="image" src="assets/images/logo.png">
+        </a>
+      </div>
+      <button type="button" class="closer-btn" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+    <div class="offcanvas-body">
+      <h5>Recent News</h5>
+      <ul class="recent-blog-list mt-20 mb-60">
+        <li>
+          <div class="recent-blog-item">
+            <div class="image">
+              <img src="assets/images/blog/blog-3.jpg" alt="image">
+            </div>
+            <div class="content">
+              <h6><a href="blog-details.html">Amplify Your Brand's Reach and Influence</a></h6>
+              <span>24 June,2023</span>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="recent-blog-item">
+            <div class="image">
+              <img src="assets/images/blog/blog-2.jpg" alt="image">
+            </div>
+            <div class="content">
+              <h6><a href="blog-details.html">Amplify Your Brand's Reach and Influence</a></h6>
+              <span>24 June,2023</span>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="recent-blog-item">
+            <div class="image">
+              <img src="assets/images/blog/blog-1.jpg" alt="image">
+            </div>
+            <div class="content">
+              <h6><a href="blog-details.html">Amplify Your Brand's Reach and Influence</a></h6>
+              <span>24 June,2023</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <h5>Emergency Contact</h5>
+      <div class="d-flex flex-column gap-3 mt-20">
+        <div class="address-box">
+          <div class="icon style-1">
+            <i class="bi bi-telephone"></i>
+          </div>
+          <div class="information">
+            <h5>Phone</h5>
+            <a href="tel:0956565778">0956565778</a>
+            <a href="tel:0956565777">0956565777</a>
+          </div>
+        </div>
+
+        <div class="address-box">
+          <div class="icon style-2">
+            <i class="bi bi-envelope"></i>
+          </div>
+          <div class="information">
+            <h5>Email</h5>
+            <a href="mailto:info@gmail.com">info@gmail.com</a>
+            <a href="mailto:support@gmail.com">support@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="closer-btn" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="feature-item style-1">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 478.2 478.2"
+                style="enable-background: new 0 0 512 512" xml:space="preserve" class>
+                <g>
+                  <path
+                    d="M457.575 325.1c9.8-12.5 14.5-25.9 13.9-39.7-.6-15.2-7.4-27.1-13-34.4 6.5-16.2 9-41.7-12.7-61.5-15.9-14.5-42.9-21-80.3-19.2-26.3 1.2-48.3 6.1-49.2 6.3h-.1c-5 .9-10.3 2-15.7 3.2-.4-6.4.7-22.3 12.5-58.1 14-42.6 13.2-75.2-2.6-97-16.6-22.9-43.1-24.7-50.9-24.7-7.5 0-14.4 3.1-19.3 8.8-11.1 12.9-9.8 36.7-8.4 47.7-13.2 35.4-50.2 122.2-81.5 146.3-.6.4-1.1.9-1.6 1.4-9.2 9.7-15.4 20.2-19.6 29.4-5.9-3.2-12.6-5-19.8-5h-61c-23 0-41.6 18.7-41.6 41.6v162.5c0 23 18.7 41.6 41.6 41.6h61c8.9 0 17.2-2.8 24-7.6l23.5 2.8c3.6.5 67.6 8.6 133.3 7.3 11.9.9 23.1 1.4 33.5 1.4 17.9 0 33.5-1.4 46.5-4.2 30.6-6.5 51.5-19.5 62.1-38.6 8.1-14.6 8.1-29.1 6.8-38.3 19.9-18 23.4-37.9 22.7-51.9-.4-8.1-2.2-15-4.1-20.1zm-409.3 122.2c-8.1 0-14.6-6.6-14.6-14.6V270.1c0-8.1 6.6-14.6 14.6-14.6h61c8.1 0 14.6 6.6 14.6 14.6v162.5c0 8.1-6.6 14.6-14.6 14.6h-61v.1zm383.7-133.9c-4.2 4.4-5 11.1-1.8 16.3 0 .1 4.1 7.1 4.6 16.7.7 13.1-5.6 24.7-18.8 34.6-4.7 3.6-6.6 9.8-4.6 15.4 0 .1 4.3 13.3-2.7 25.8-6.7 12-21.6 20.6-44.2 25.4-18.1 3.9-42.7 4.6-72.9 2.2h-1.4c-64.3 1.4-129.3-7-130-7.1h-.1l-10.1-1.2c.6-2.8.9-5.8.9-8.8V270.1c0-4.3-.7-8.5-1.9-12.4 1.8-6.7 6.8-21.6 18.6-34.3 44.9-35.6 88.8-155.7 90.7-160.9.8-2.1 1-4.4.6-6.7-1.7-11.2-1.1-24.9 1.3-29 5.3.1 19.6 1.6 28.2 13.5 10.2 14.1 9.8 39.3-1.2 72.7-16.8 50.9-18.2 77.7-4.9 89.5 6.6 5.9 15.4 6.2 21.8 3.9 6.1-1.4 11.9-2.6 17.4-3.5.4-.1.9-.2 1.3-.3 30.7-6.7 85.7-10.8 104.8 6.6 16.2 14.8 4.7 34.4 3.4 36.5-3.7 5.6-2.6 12.9 2.4 17.4.1.1 10.6 10 11.1 23.3.4 8.9-3.8 18-12.5 27z"
+                    data-original="#000000" class></path>
+                </g>
+              </svg>
+            </div>
+            <div class="content">
+              <h4>Like Boost</h4>
+              <p>
+                Unlock a lucrative opportunity by partnering with us on
+                popular marketplaces profits.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/jquery-3.7.0.min.js"></script>
+  <script src="assets/js/viewport.jquery.js"></script>
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/swiper-bundle.min.js"></script>
+  <script src="./assets/js/odometer.min.js"></script>
+  <script src="./assets/js/select2.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,616 @@
+.form-title {
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+.form-inner {
+    margin-bottom: 20px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-inner {
+    position: relative;
+    input[type="date"] {
+        z-index: 1;
+        background-color: transparent;
+
+        &::after {
+            content: "\F1E2";
+            position: absolute;
+            right: 10px;
+            top: 9px;
+            font-family: "Bootstrap-icons";
+            z-index: 9;
+        }
+    }
+}
+
+label {
+    font-size: 14px;
+    color: $text-primary;
+    margin-bottom: 5px;
+    font-weight: 500;
+
+    i {
+        color: $text-primary;
+        font-size: 18px;
+        margin-right: 5px;
+        vertical-align: text-top;
+    }
+}
+
+label {
+    i {
+        @include linear-text1;
+    }
+}
+
+input {
+    background-color: $site-bg;
+    @include border-gradient;
+    width: 100%;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 3px;
+    font-size: 16px;
+    color: $text-secondary;
+    @include transition-4;
+
+    @include lg-down-device {
+        padding: 8px 15px;
+    }
+
+    &:focus {
+        border: 1px solid $color-primary;
+    }
+
+    &::placeholder {
+        font-size: 13px;
+        color: $text-secondary !important;
+    }
+}
+textarea {
+    @extend input;
+    min-height: 100px;
+}
+
+input[type="color"] {
+    background-color: transparent;
+    outline: none;
+    height: 40px;
+    padding: 5px;
+}
+
+input[type="file"] {
+    background-color: transparent;
+    outline: none;
+    // height: 40px;
+    padding: 10px;
+}
+
+input[type="checkbox"] {
+    min-width: 15px !important;
+    height: 15px;
+    border-radius: 2px !important;
+    padding: 0;
+    display: inline-block;
+    cursor: pointer;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+.form-check-input:checked {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    border: 1px solid $color-white;
+}
+
+input[type="radio"] {
+    min-width: 15px !important;
+    height: 15px;
+    padding: 0;
+    display: inline-block;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.form-switch {
+    input {
+        border-radius: 30px !important;
+        overflow: hidden;
+    }
+}
+
+select {
+    width: 100% !important;
+    display: block;
+    font-size: 14px;
+}
+
+.select2.select2-container {
+    width: 100% !important;
+}
+.select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    width: 100% !important;
+    height: 44px;
+    line-height: 44px;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: $site-bg !important;
+
+}
+.select2-container--default .select2-selection--single {
+    @include border-gradient;
+    border-radius: 4px;
+    background-color: $site-bg;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: $text-secondary;
+    line-height: 40px;
+    font-size: 14px;
+    padding-left: 15px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 40px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 26px;
+    position: absolute;
+    top: 7px;
+    right: 6px;
+    width: 20px;
+}
+.select2-dropdown{
+    background-color: $site-bg;
+}
+.select2-container--default .select2-results__option--selected{
+    @include linear-bg;
+    color: $color-white;
+}
+
+// Date Picker
+.flatpickr-day.startRange {
+    background-color: $color-primary;
+    border-color: $color-primary;
+}
+.flatpickr-day.endRange {
+    background-color: $color-primary;
+    border-color: $color-primary;
+}
+.flatpickr-day.selected {
+    background-color: $color-primary;
+    border-color: $color-primary;
+
+    &:hover {
+        border-color: $text-secondary;
+        background-color: $text-secondary;
+    }
+}
+
+
+.dayContainer {
+    width: 290.875px;
+    min-width: 290.875px;
+    max-width: 290.875px;
+}
+
+.sign-other-title {
+    margin-top: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        width: 100%;
+        height: 1px;
+        background-color: $color-border;
+        z-index: -1;
+    }
+    h6 {
+        color: $text-secondary;
+        background-color: $color-white;
+        display: inline-block;
+        padding: 15px;
+    }
+}
+
+.signup-buttons-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    button {
+        box-shadow: none;
+        background-color: unset;
+        transition: 0.3s;
+        display: inline-block;
+        &:hover {
+            transform: translateY(3px);
+        }
+        i {
+            &.facebook {
+                color: rgb(69, 100, 255);
+            }
+            &.google {
+                color: rgb(203, 0, 0);
+            }
+
+            &.twitter {
+                color: rgb(2, 176, 224);
+            }
+        }
+    }
+}
+
+.have-account {
+    text-align: center;
+    margin-top: 25px;
+    p {
+        color: $text-secondary;
+        font-size: 14px;
+    }
+    a {
+        color: $text-primary;
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+
+.forget-pass {
+    color: $text-secondary;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: underline !important;
+    @include transition-3;
+    &:hover {
+        color: $color-primary;
+    }
+}
+
+.unlock-account {
+    text-align: center;
+    margin-bottom: 30px;
+    .image {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 10px;
+    }
+    h5 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+}
+
+.uploadFile {
+    width: 100%;
+    background-color: white;
+    font-size: 16px;
+    overflow: hidden;
+    padding: 10px 10px 10px 10px;
+    position: relative;
+    resize: none;
+    height: 90px;
+    [type="file"] {
+        cursor: pointer !important;
+        display: block;
+        min-height: 100%;
+        min-width: 100%;
+        opacity: 0;
+        position: absolute;
+        right: 0px;
+        text-align: right;
+        top: 0px;
+        z-index: 1;
+    }
+    span {
+        display: inline-block;
+        font-size: 14px;
+        color: $text-light;
+        font-weight: 400;
+    }
+}
+
+.form-wrap{
+    padding: 35px 35px;
+    @include linear-bg-lighter;
+
+    @include lg-down-device{
+        padding: 25px 20px;
+    }
+
+&.style-2{
+    padding: 0;
+    form {
+        @include linear-bg-lighter;
+    }
+}
+
+form {
+    @include border-gradient-light;
+    background-color: $card-bg;
+    padding: 40px 35px;
+
+    @include md-down-device{
+        padding: 25px 20px;
+    }
+
+    &.style-2 {
+        padding: 0;
+        form {
+            @include linear-bg-lighter;
+        }
+    }
+
+    form {
+        @include border-gradient-light;
+        background-color: $card-bg;
+        padding: 40px 35px;
+
+        @include md-down-device {
+            padding: 25px 20px;
+        }
+        @include md-device {
+            padding: 30px 25px;
+        }
+        @include lg-device {
+            padding: 30px 25px;
+        }
+    }
+
+    .form-inner {
+        position: relative;
+    }
+
+    .title {
+        margin-bottom: 30px;
+        h4 {
+            font-size: 26px;
+            font-weight: 600;
+            text-align: center;
+
+            @include md-down-device {
+                font-size: 22px;
+            }
+            @include md-device {
+                font-size: 24px;
+            }
+        }
+    }
+
+    input {
+        @include border-gradient;
+        background-color: $site-bg;
+        color: $text-primary;
+    }
+    label {
+        i {
+            @include linear-text1;
+        }
+    }
+    .forgot-pass {
+        text-align: right;
+        a {
+            text-decoration: none;
+            color: $text-secondary;
+            display: inline-block;
+        }
+    }
+}
+
+input {
+    @include border-gradient;
+    background-color: $site-bg;
+    color: $text-primary;
+}
+label {
+    i {
+        @include linear-text1;
+    }
+}
+.forgot-pass {
+    text-align: right;
+    a {
+        text-decoration: none;
+        color: $text-secondary;
+        display: inline-block;
+    }
+}
+}
+   //   checkbox
+   .form-group {
+    display: block;
+}
+
+.form-group input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+}
+
+.form-group label {
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+.form-group label:before {
+    content: "";
+    -webkit-appearance: none;
+    background-color: transparent;
+    @include border-gradient;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.05),
+        inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.form-group input:checked + label:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    width: 6px;
+    height: 14px;
+    @include border-gradient;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.contact-image {
+    opacity: 0.8;
+}
+.contact-left-area {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 50px 60px;
+    @include flex(center);
+    @include linear-bg;
+    height: 100vh;
+    @include lg-down-device {
+        height: auto;
+    }
+
+    @include md-down-device{
+        padding: 30px 20px;
+    }
+
+    .form-wrap {
+        height: 100vh;
+        @include lg-down-device {
+            height: auto;
+        }
+    }
+
+    .content {
+        max-width: 650px;
+        margin: 0 auto;
+        // background-color: rgba(255,255,255,0.15);
+        // backdrop-filter: blur(5px);
+        text-align: center;
+        span {
+            display: inline-block;
+            font-size: 16px;
+            color: $text-light;
+            margin-bottom: 3px;
+            letter-spacing: 1px;
+        }
+        h2 {
+            font-size: 40px;
+            color: $color-white;
+            margin-bottom: 30px;
+
+            @include md-down-device{
+                font-size: 28px;
+            }
+            @include md-device{
+                font-size: 32px;
+            }
+            @include lg-device{
+                font-size: 36px;
+            }
+        }
+        p {
+            color: $text-light;
+            margin-bottom: 35px;
+        }
+        .logo {
+            text-align: center;
+            img {
+                margin: 0 auto 40px;
+            }
+        }
+        img {
+            max-width: 260px;
+            margin: 0 auto 30px;
+        }
+    }
+}
+
+.form-section {
+    height: 100vh;
+    position: relative;
+    @include lg-down-device {
+        height: auto;
+    }
+
+    @include flex(center);
+    flex-direction: column;
+    .form-wrap {
+        @include flex(center);
+        flex-direction: column;
+        width: 100%;
+        flex-wrap: nowrap;
+
+        form {
+            width: 100%;
+        }
+    }
+
+    .form-wrap {
+        height: 100vh;
+        @include lg-down-device {
+            height: auto;
+        }
+    }
+}
+
+.another-singup {
+    text-align: center;
+
+    .or {
+        padding: 25px 0;
+    }
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 3px;
+
+        li {
+            @include border-gradient;
+            padding: 6px 18px;
+
+            @include sm-down-device{
+                width: 100%;
+            }
+
+            a {
+                color: $text-primary;
+                font-weight: 500;
+            }
+            i {
+                font-size: 18px;
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+        }
+    }
+}
