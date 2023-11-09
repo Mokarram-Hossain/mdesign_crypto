@@ -1,60 +1,117 @@
+
 .table-container {
-    overflow-x: auto;
-    width: 100%;
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
-    table {
-      border-collapse: collapse;
-      margin: 0;
-      padding: 0;
-      max-width: 100%;
-      width: 100%;
-      background-color: $card-bg;
-    }
-    table thead tr {
-      background-color: var(--color-primary);
-      color: var(--color-dark);
-    }
-    table tr {
-      &:nth-child(even) td{
-        background-color: rgba(0, 0, 0, 0.03);
-      }
-    }
-    
-    table th {
-      padding: 20px 20px;
-      text-align: left;
-      white-space: nowrap;
-      font-size: 14px;
-      font-weight: 700;
-      color: $color-primary-text;
-      background-color: $text-primary;
-    }
-    table td {
-      padding: 15px 20px;
-      font-weight: 400;
-      font-size: 15px;
-      text-align: left;
-      white-space: nowrap;
-      vertical-align: middle;
-    }
-    
-    table th:first-child,
-    table td:first-child {
-      text-align: left;
-    }
-    
-    table th:last-child,
-    table td:last-child {
-      text-align: right;
-    }
-    .table-action {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 1rem;
-    }
-    
-    .table {
-      width: 100% !important;
+  overflow-x: auto;
+  width: 100%;
+  position: relative;
+}
+table {
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  width: 100%;
+  background-color: $site-bg;
+}
+table thead tr {
+  background-color: $site-bg;
+  border-bottom:  1px solid $color-border !important;
+  border-top:  1px solid $color-border !important;
+}
+table tr {
+  border-bottom: 1px solid #eeeeee99;
+
+  &:nth-child(even) td{
+      background-color: rgba(0, 0, 0, 0.03);
     }
   }
+table th {
+  padding: 15px 15px !important;
+  text-align: left;
+  white-space: nowrap;
+  font-size: 17px !important;
+  font-weight: 400;
+  color: $color-primary !important;
+}
+table td {
+  padding: 15px 15px !important;
+  font-weight: 400;
+  font-size: 15px;
+  text-align: left;
+  white-space: nowrap;
+  vertical-align: middle;
+  @include md-down-device{
+    padding: 15px 20px;
+  }
+}
+
+table th:first-child,
+table td:first-child {
+  text-align: left;
+}
+
+table th:last-child,
+table td:last-child {
+  text-align: right;
+}
+.table-action {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+@media screen and (max-width: 767px) {
+  table {
+    border: 0;
+  }
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  table tr {
+    border: 1px solid var(--border);
+    border-bottom: 2px solid #ddd;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: right;
+
+    .form-switch{
+      @include md-down-device{
+        padding-left: 100%;
+      }
+    }
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $text-primary;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+  table th:first-child,
+  table td:first-child {
+    text-align: right;
+  }
+
+  table th:last-child,
+  table td:last-child {
+    text-align: right;
+  }
+}

@@ -1,13 +1,67 @@
+a{
+    color: $text-secondary;
+}
 .form-title {
-    font-size: 22px;
-    margin-bottom: 25px;
-    font-weight: 700;
+    font-size: 26px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+
+    @include md-down-device{
+        font-size: 22px;
+    }
+
+    &::before{
+        content: '';
+        position: absolute;
+        left: -15px;
+        top: -3px;
+        width: 35px;
+        height: 35px;
+        background-color: $color-primary-light;
+        border-radius: 50%;
+        z-index: -1;
+    }
 }
 .form-inner {
     margin-bottom: 20px;
     z-index: 1;
     display: flex;
     flex-direction: column;
+}
+
+.form-wrapper{
+    padding: 40px 40px;
+    background-color: $color-white;
+
+    &.login-form{
+        width: 100%;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &.style-two{
+        padding: 0;
+        input{
+            border: 1px solid $color-border;
+            &:focus{
+                border: 1px solid $color-primary;
+            }
+        }
+    }
+
+    @include xl-device{
+        padding: 35px 30px;
+    }
+    @include lg-device{
+        padding: 35px 30px;
+    }
+
+    @include lg-down-device{
+        padding: 30px 30px;
+    }
 }
 
 .form-inner {
@@ -32,28 +86,16 @@ label {
     color: $text-primary;
     margin-bottom: 5px;
     font-weight: 500;
-
-    i {
-        color: $text-primary;
-        font-size: 18px;
-        margin-right: 5px;
-        vertical-align: text-top;
-    }
-}
-
-label {
-    i {
-        @include linear-text1;
-    }
 }
 
 input {
-    background-color: $site-bg;
-    @include border-gradient;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid $color-border;
     width: 100%;
     display: block;
     padding: 10px 15px;
-    border-radius: 3px;
+    border-radius: 0px;
     font-size: 16px;
     color: $text-secondary;
     @include transition-4;
@@ -68,12 +110,23 @@ input {
 
     &::placeholder {
         font-size: 13px;
-        color: $text-secondary !important;
+        color: $text-secondary;
     }
 }
 textarea {
     @extend input;
     min-height: 100px;
+}
+
+select{
+    background-color: transparent;
+    outline: none;
+    border: 1px solid $color-border;
+    width: 100%;
+    display: block;
+    padding: 8px 15px;
+    border-radius: 0px;
+    font-size: 16px;
 }
 
 input[type="color"] {
@@ -119,17 +172,10 @@ input[type="radio"] {
     }
 }
 
-.form-switch {
-    input {
-        border-radius: 30px !important;
-        overflow: hidden;
-    }
-}
 
 select {
     width: 100% !important;
     display: block;
-    font-size: 14px;
 }
 
 .select2.select2-container {
@@ -195,13 +241,6 @@ select {
     }
 }
 
-
-.dayContainer {
-    width: 290.875px;
-    min-width: 290.875px;
-    max-width: 290.875px;
-}
-
 .sign-other-title {
     margin-top: 20px;
     text-align: center;
@@ -260,23 +299,31 @@ select {
     margin-top: 25px;
     p {
         color: $text-secondary;
-        font-size: 14px;
+        font-size: 16px;
+        @include md-down-device{
+            font-size: 14px;
+        }
     }
     a {
         color: $text-primary;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 600;
+        transition: 0.4s ease;
+        margin-left: 5px;
+        &:hover{
+            color: $color-primary;
+        }
     }
 }
 
-.forget-pass {
-    color: $text-secondary;
+.forgot-pass {
+    color: $text-secondary !important;
     font-size: 14px;
     font-weight: 600;
     text-decoration: underline !important;
     @include transition-3;
     &:hover {
-        color: $color-primary;
+        color: $color-primary !important;
     }
 }
 
@@ -326,116 +373,6 @@ select {
     }
 }
 
-.form-wrap{
-    padding: 35px 35px;
-    @include linear-bg-lighter;
-
-    @include lg-down-device{
-        padding: 25px 20px;
-    }
-
-&.style-2{
-    padding: 0;
-    form {
-        @include linear-bg-lighter;
-    }
-}
-
-form {
-    @include border-gradient-light;
-    background-color: $card-bg;
-    padding: 40px 35px;
-
-    @include md-down-device{
-        padding: 25px 20px;
-    }
-
-    &.style-2 {
-        padding: 0;
-        form {
-            @include linear-bg-lighter;
-        }
-    }
-
-    form {
-        @include border-gradient-light;
-        background-color: $card-bg;
-        padding: 40px 35px;
-
-        @include md-down-device {
-            padding: 25px 20px;
-        }
-        @include md-device {
-            padding: 30px 25px;
-        }
-        @include lg-device {
-            padding: 30px 25px;
-        }
-    }
-
-    .form-inner {
-        position: relative;
-    }
-
-    .title {
-        margin-bottom: 30px;
-        h4 {
-            font-size: 26px;
-            font-weight: 600;
-            text-align: center;
-
-            @include md-down-device {
-                font-size: 22px;
-            }
-            @include md-device {
-                font-size: 24px;
-            }
-        }
-    }
-
-    input {
-        @include border-gradient;
-        background-color: $site-bg;
-        color: $text-primary;
-    }
-    label {
-        i {
-            @include linear-text1;
-        }
-    }
-    .forgot-pass {
-        text-align: right;
-        a {
-            text-decoration: none;
-            color: $text-secondary;
-            display: inline-block;
-        }
-    }
-}
-
-input {
-    @include border-gradient;
-    background-color: $site-bg;
-    color: $text-primary;
-}
-label {
-    i {
-        @include linear-text1;
-    }
-}
-.forgot-pass {
-    text-align: right;
-    a {
-        text-decoration: none;
-        color: $text-secondary;
-        display: inline-block;
-    }
-}
-}
-   //   checkbox
-   .form-group {
-    display: block;
-}
 
 .form-group input {
     padding: 0;
@@ -456,127 +393,106 @@ label {
     content: "";
     -webkit-appearance: none;
     background-color: transparent;
-    @include border-gradient;
-    box-shadow:
-        0 1px 2px rgba(0, 0, 0, 0.05),
-        inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    border: 1px solid $color-border;
     padding: 10px;
     display: inline-block;
     position: relative;
     vertical-align: middle;
     cursor: pointer;
     margin-right: 5px;
+    top: -1px;
 }
 
 .form-group input:checked + label:after {
     content: "";
     display: block;
     position: absolute;
-    top: 4px;
+    top: 3px;
     left: 8px;
     width: 6px;
-    height: 14px;
-    @include border-gradient;
+    height: 12px;
+    border: 1px solid $color-primary;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
 }
 
-.contact-image {
-    opacity: 0.8;
-}
-.contact-left-area {
+.form-section {
+    min-height: 100vh;
+    padding: 90px 0px;
     position: relative;
     z-index: 1;
-    text-align: center;
-    padding: 50px 60px;
-    @include flex(center);
-    @include linear-bg;
-    height: 100vh;
+    background-color: $color-primary-light2;
+    overflow: hidden;
     @include lg-down-device {
         height: auto;
     }
 
-    @include md-down-device{
-        padding: 30px 20px;
-    }
-
-    .form-wrap {
-        height: 100vh;
-        @include lg-down-device {
-            height: auto;
+    .form-bg{
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        max-width: 50%;
+        z-index: -1;
+        @include lg-down-device{
+            max-width: 100%;
         }
-    }
-
-    .content {
-        max-width: 650px;
-        margin: 0 auto;
-        // background-color: rgba(255,255,255,0.15);
-        // backdrop-filter: blur(5px);
-        text-align: center;
-        span {
-            display: inline-block;
-            font-size: 16px;
-            color: $text-light;
-            margin-bottom: 3px;
-            letter-spacing: 1px;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
         }
-        h2 {
-            font-size: 40px;
-            color: $color-white;
-            margin-bottom: 30px;
-
-            @include md-down-device{
-                font-size: 28px;
-            }
-            @include md-device{
-                font-size: 32px;
-            }
-            @include lg-device{
-                font-size: 36px;
-            }
+        img{
+            min-height: 100%;
+            max-height: 100%;
+            object-fit: cover;
         }
-        p {
-            color: $text-light;
-            margin-bottom: 35px;
-        }
-        .logo {
-            text-align: center;
-            img {
-                margin: 0 auto 40px;
-            }
-        }
-        img {
-            max-width: 260px;
-            margin: 0 auto 30px;
-        }
-    }
-}
-
-.form-section {
-    height: 100vh;
-    position: relative;
-    @include lg-down-device {
-        height: auto;
     }
 
     @include flex(center);
     flex-direction: column;
-    .form-wrap {
-        @include flex(center);
-        flex-direction: column;
-        width: 100%;
-        flex-wrap: nowrap;
-
-        form {
-            width: 100%;
-        }
-    }
 
     .form-wrap {
         height: 100vh;
         @include lg-down-device {
             height: auto;
         }
+    }
+    .eth-icon{
+        position: absolute;
+        bottom: 90px;
+        right: 50px;
+        width: 60px;
+        opacity: 0.1;
+        z-index: -1;
+    }
+    .ada-icon{
+        position: absolute;
+        top: 0;
+        right: 50px;
+        width: 60px;
+        opacity: 0.1;
+        z-index: -1;
+    }
+    .sol-icon{
+        position: absolute;
+        top: -80px;
+        left: 50px;
+        width: 60px;
+        opacity: 0.1;
+        z-index: -1;
+    }
+    .bnb-icon{
+        position: absolute;
+        bottom: -90px;
+        left: 50px;
+        width: 60px;
+        opacity: 0.1;
+        z-index: -1;
     }
 }
 
@@ -584,33 +500,138 @@ label {
     text-align: center;
 
     .or {
-        padding: 25px 0;
+        padding: 30px 10px;
+        position: relative;
+        display: block;
+        z-index: 4;
+        background-color: #fff !important;
+
+        &::before{
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(90deg, #dadce0,transparent,#dadce0);
+            z-index: -2;
+            display: block;
+        }
     }
-    ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 3px;
 
-        li {
-            @include border-gradient;
-            padding: 6px 18px;
-
-            @include sm-down-device{
-                width: 100%;
+    h6{
+        margin-bottom: 20px;
+    }
+}
+.form-social{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    a{
+        i {
+            font-size: 20px;
+            vertical-align: middle;
+            border-radius: 50%;
+            line-height: 1;
+            min-width: 45px;
+            height: 45px;
+            line-height: 46px;
+            display: inline-block;
+            transition: 0.4s ease;
+            &.google{
+                color: rgb(233,66,52);
+                background-color: rgba(233,66,52,0.1);
+                &:hover{
+                    background-color: rgb(233,66,52);
+                    color: $color-white;
+                }   
             }
-
-            a {
-                color: $text-primary;
-                font-weight: 500;
+            &.facebook{
+                color: rgb(23,115,234);
+                background-color: rgba(23,115,234,0.1);
+                &:hover{
+                    background-color:rgb(23,115,234);
+                    color: $color-white;
+                } 
             }
-            i {
-                font-size: 18px;
-                margin-right: 10px;
-                vertical-align: middle;
+            &.linkedin{
+                color: rgb(1,115,175);
+                background-color: rgba(1,115,175,0.1);
+                &:hover{
+                    background-color:rgb(1,115,175);
+                    color: $color-white;
+                } 
             }
         }
     }
+}
+
+.form-left{
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0px 10px;
+    text-align: center;
+
+    .logo{
+        max-width: 200px;
+        margin: 0 auto 40px;
+        display: inline-block;
+
+        @include md-down-device{
+            max-width: 150px;
+        }
+    }
+    h1{
+        font-size: 55px;
+        color: $color-white;
+        margin-bottom: 20px;
+        line-height: 1.1;
+
+        @include xl-device{
+            font-size: 45px;
+        }
+        @include lg-device{
+            font-size: 45px;
+        }
+        @include lg-down-device{
+            font-size: 35px;
+        }
+    }
+    p{
+        color: $color-white;
+        opacity: 0.8;
+    }
+    h6{
+        color: $color-white;
+        font-size: 18px;
+    }
+    #countdown{
+        margin-top: 40px;
+    }
+    .count-down-list{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        li{
+            padding: 8px;
+            border: 1px solid rgba(255,255,255,0.4);
+            min-width: 85px;
+            text-align: center;
+            color: $color-white;
+            font-size: 14px;
+        }
+        span{
+            display: block;
+            font-size: 22px;
+            color: $color-white;
+            font-weight: 500;
+        }
+}   
 }

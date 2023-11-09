@@ -1,6 +1,9 @@
 (function () {
     ("use strict");
 
+        // Animation
+        AOS.init();
+
     $('.sidebar-btn').on("click", function () {
         $('.main-nav').addClass('show-menu');
     });
@@ -51,7 +54,6 @@
         })
     }
 
-
     // password js
     $(document).on('click', '#toggle-password', function (e) {
         var passwordInput = $("#password-input");
@@ -64,7 +66,6 @@
             $("#toggle-password").removeClass('fa-duotone fa-eye-slash eye').addClass('fa-duotone fa-eye eye');
         }
     });
-
 
     // Nice Selecte initialization
     if (document.querySelector(".niceSelect")) {
@@ -118,12 +119,60 @@
         }
     });
 
-    // Blog slider
+    // Advertise-section
+    var swiper = new Swiper(".advertise-slider", {
+        effect: "cards",
+        grabCursor: true,
+        slidesPerView: 'auto',
+        pagination: {
+            el: '.card-pagination',
+            clickable: true
+        },
+      });
 
+    //   provider-slider
+      var swiper = new Swiper(".provider-slider", {
+        slidesPerView: 3,
+        speed: 2500,
+        spaceBetween: 15,
+        loop: true,
+        navigation: {
+            nextEl: '.testi-next',
+            prevEl: '.testi-prev',
+          },
+        autoplay: {
+            delay: 0, // Autoplay duration in milliseconds
+        },
+        breakpoints: {
+            280: {
+                slidesPerView: 3,
+            },
+            386: {
+                slidesPerView: 4,
+            },
+            576: {
+                slidesPerView: 4,
+            },
+            768: {
+                slidesPerView: 5,
+            },
+            992: {
+                slidesPerView: 4,
+            },
+            1200: {
+                slidesPerView: 5,
+            },
+            1400: {
+                slidesPerView: 5,
+            },
+        }
+    });
+
+    // Blog slider
        var swiper = new Swiper(".blog-slider", {
         slidesPerView: 1,
         speed: 1200,
-        spaceBetween: 10,
+        spaceBetween: 20,
         loop: true,
         navigation: {
             nextEl: '.testi-next',
@@ -131,6 +180,10 @@
           },
         autoplay: {
             delay: 1000, // Autoplay duration in milliseconds
+        },
+        pagination: {
+            el: '.card-pagination',
+            clickable: true
         },
         breakpoints: {
             280: {
@@ -149,10 +202,10 @@
                 slidesPerView: 2,
             },
             1200: {
-                slidesPerView: 2,
+                slidesPerView: 3,
             },
             1400: {
-                slidesPerView: 2,
+                slidesPerView: 3,
             },
         }
     });
@@ -178,5 +231,62 @@
         });
         
     });
+
+    $("[data-fancybox]").fancybox({
+        // Options here
+    });
+
+    $('.marquee').marquee({
+        //duration in milliseconds of the marquee
+        duration: 30000,
+        gap: 50,
+        delayBeforeStart: 0,
+        direction: 'left',
+        duplicated: true
+    });
+    
+    (function () {
+        const second = 1000,
+              minute = second * 60,
+              hour = minute * 60,
+              day = hour * 24;
+      
+        //I'm adding this section so I don't have to keep updating this pen every year :-)
+        //remove this if you don't need it
+        let today = new Date(),
+            dd = String(today.getDate()).padStart(2, "0"),
+            mm = String(today.getMonth() + 1).padStart(2, "0"),
+            yyyy = today.getFullYear(),
+            nextYear = yyyy + 1,
+            dayMonth = "09/30/",
+            birthday = dayMonth + yyyy;
+        
+        today = mm + "/" + dd + "/" + yyyy;
+        if (today > birthday) {
+          birthday = dayMonth + nextYear;
+        }
+        //end
+        
+        const countDown = new Date(birthday).getTime(),
+            x = setInterval(function() {    
+      
+              const now = new Date().getTime(),
+                    distance = countDown - now;
+      
+              document.getElementById("days").innerText = Math.floor(distance / (day)),
+                document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+                document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+                document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+      
+              //do something later when date is reached
+              if (distance < 0) {
+                document.getElementById("headline").innerText = "It's my birthday!";
+                document.getElementById("countdown").style.display = "none";
+                document.getElementById("content").style.display = "block";
+                clearInterval(x);
+              }
+              //seconds
+            }, 0)
+        }());
 
 }())

@@ -1,37 +1,27 @@
 footer {
     position: relative;
-    // background-color: $color-dark;
+    background-color: $color-dark;
     z-index: 1;
 
     .footer-social {
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        gap: 15px;
-        margin-top: 30px;
-        a {
-            @include square(40px, 50%);
-            display: flex;
-            align-items: center;
+        gap: 25px;
+
+        @include lg-down-device{
             justify-content: center;
-            vertical-align: middle;
-            overflow: hidden;
-            background-color: transparent;
-            border: 1px solid $border-light;
-            opacity: 1;
-            @include transition-3;
-
-            &:hover{
-                background-color: $color-primary;
-                svg{
-                    fill: $text-primary;
-                }
+            margin-bottom: 15px;
+        }
+        li{
+            a{
+                color: $text-light;
+                @include transition-4;
             }
-
-            svg {
-                width: 14px;
-                height: 14px;
-                fill: $color-primary;
+            &:hover{
+                a{
+                    color: $color-primary;
+                }
             }
         }
     }
@@ -52,22 +42,23 @@ footer {
     .footer-title{
         font-size: 20px;
         color: $color-white;
-        margin-bottom: 25px;
+        margin-bottom: 15px;
         line-height: 1;
         position: relative;
         padding-bottom: 10px;
-        
+        position: relative;
+
         &::before{
             content: '';
             position: absolute;
-            left: 0;
-            bottom: 0;
+            left: -15px;
+            top: -15px;
             width: 40px;
-            height: 2px;
-            border-radius: 4px;
-            display: block;
-            background-color: var(--color-primary);
-          }
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
 
         @include md-down-device{
             font-size: 18px;
@@ -102,31 +93,7 @@ footer {
         }
     }
 
-    .footer-address{
-        li{
-            color: $text-light;
-            margin-bottom: 25px;
 
-            &:last-child{
-                margin-bottom: 0px;
-            }
-            a{
-                font-size: 16px;
-                color: inherit;
-                text-decoration: none;
-            }
-
-            i{
-                font-size: 20px;
-                vertical-align: middle;
-                margin-right: 10px;
-                margin-bottom: 10px;
-                @include linear-text1;
-                float: left;
-                clear: both;
-            }
-        }
-    }
 
     .footer-bottom {
         margin-top: 90px;
@@ -137,80 +104,150 @@ footer {
             font-size: 13px;
         }
     }
-
-    .newsletter-box{
-        p{
-            font-size: 15px;
-            color: $text-light;
-        }
+    p{
+        color: $text-light;
+        font-size: 15px;
     }
 }
 
 .footer-address-wrapper{
-    margin-top: 70px;
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
     z-index: 1;
     flex-wrap: nowrap;
-    gap: 15px;
+    gap: 25px;
 
     @include lg-down-device{
         flex-wrap: wrap;
     }
 
-    &::after{
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        display: block;
-        width: 100%;
-        height: 1px;
-        background-color: $border-light;
-        z-index: -1;
-
-        @include lg-down-device{
-            content: unset;
-        }
-    }
-
     .address-item{
-        border: 1px solid $border-light;
-        padding: 18px 40px;
-        text-align: center;
-        border-radius: 100px;
-        min-width: 200px;
-        background-color: $color-dark;
+        text-align: left;
 
-        @include lg-down-device{
-            min-width: 100%;
-            max-width: 100%;
-        }
-
-        .icon{
-            margin-bottom: 5px;
-            i{
-                color: $color-primary;
-                font-size: 26px;
-            }
-        }
         h6{
             font-size: 15px;
             color: $color-white;
-            margin-bottom: 3px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
         }
         .address{
             text-decoration: none;
             color: $text-light;
-            font-size: 14px;
+            font-size: 16px;
         }
     }
 }
 
 .footer-logo{
-    max-width: 160px;
+    max-width: 220px;
+    @include lg-down-device{
+        max-width: 150px;
+    }
 }
+
+.footer-big-title{
+    h3{
+        font-size: 45px;
+        color: $color-white;
+
+        @include md-device{
+            font-size: 40px;
+        }
+        @include md-down-device{
+            font-size: 32px;
+        }
+    }
+}
+
+.input-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    backdrop-filter: blur(3px);
+    padding: 1px;
+    overflow: hidden;
+    border-radius: 0px;
+
+    &.style-two{
+        input{
+            background-color: $bg-light;
+            border: 1px solid $color-border;
+            border-radius: 30px 0 0 30px;
+            color: $text-primary;
+            &:focus{
+                border: 1px solid $color-primary;
+              }
+          
+        }
+        button{
+            border-radius: 0 30px 30px 0;
+            min-width: 60px;
+        }
+    }
+  
+    &:hover {
+      button {
+        i {
+          transform: rotate(45deg);
+        }
+      }
+    }
+  
+    input {
+      border: none;
+      height: 50px;
+      border: none;
+      color: $color-white;
+      padding: 0 15px;
+      font-size: 16px;
+      background-color: $color-dark;
+      border-bottom: 1px solid $border-light;
+      @include transition-4;
+
+      &:focus{
+        border-bottom: 1px solid $color-primary;
+      }
+  
+      &::placeholder {
+        color: $text-light;
+      }
+      @include md-down-device{
+        height: 45px;
+      }
+    }
+    button {
+      background-color: $color-primary;
+      color: $text-primary;
+      height: 50px;
+      line-height: 1;
+      display: inline-flex;
+      min-width: 90px;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 15px;
+      border-radius: 50px;
+  
+      @include md-down-device{
+        height: 45px;
+      }
+  
+      i {
+        margin-left: 5px;
+        font-size: 18px;
+        @include transition-3;
+        color: $color-white;
+      }
+    }
+  }
+
+  .footer-vector{
+    position: absolute;
+    top: 0%;
+    transform: translateY(50%);
+    right: 10px;
+    max-width: 150px;
+    opacity: 0.1;
+  }

@@ -14,168 +14,132 @@
 
 // Banner section css
 .banner-section {
-  height: 100vh;
-  padding: 130px 10px;
+  min-height: 100vh;
+  padding: 130px 10%;
   width: 100%;
   display: block;
   @include flex(center);
-  background-blend-mode: multiply;
   position: relative;
   overflow: hidden;
-  @include linear-bg;
   position: relative;
   z-index: 1;
 
-  // &::before{
-  //   content: '';
-  //   position: absolute;
-  //   left: 0;
-  //   top: 0;
-  //   bottom: 0;
-  //   width: 55%;
-  //   height: 100%;
-  //   background-color: rgba(0, 0, 0, 0.5);
-  //   z-index: -1;
-  // }
-
   @include lg-down-device {
     height: auto;
+    padding: 110px 10px;
   }
-  .scroll-down {
-      transform: rotate(90deg) translateY(-50%);
-      position: absolute;
-      right: 0px;
-      top: 50%;
-      z-index: 11;
-      animation: jump 15s linear infinite;
 
-    @include lg-down-device {
-      right: -50px;
+  .ada-icon{
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(-50%);
+    max-width: 60px;
+    opacity: 0.07;
+  }
+  .bnb-icon{
+    z-index: -1;
+    position: absolute;
+    left: 4%;
+    top: 90px;
+    transform: translateY(-50%);
+    max-width: 60px;
+    opacity: 0.07;
+  }
+  .sol-icon{
+    z-index: -1;
+    position: absolute;
+    right: 30px;
+    top: 60px;
+    transform: translateY(-50%);
+    max-width: 60px;
+    opacity: 0.07;
+  }
+
+  .go-down-btn {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: inline-block;
+    @include xl-down-device{
+      bottom: 0px;
     }
+  
+    svg {
+      position: relative;
+      z-index: -1;
+      display: block;
+      width: 100px;
 
-    @keyframes jump {
-      0% {
-        transform: translateY(0) rotate(90deg);
-      }
-      25% {
-        transform: translateY(-10px) rotate(90deg);
-      }
-      0% {
-        transform: translateY(0) rotate(90deg);
-      }
-      75% {
-        transform: translateY(10px) rotate(90deg);
-      }
-      100% {
-        transform: translateY(0) rotate(90deg);
-      }
-    }
-    a {
-      font-weight: 400;
-      font-size: 15px;
-      line-height: 24px;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      color: $color-white;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-
-      @include md-down-device{
-        font-size: 12px;
-      }
-    }
-    span {
-      height: 38px;
-      width: 38px;
-      border-radius: 50%;
-      border: 1px solid $color-white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.5s;
-      transform: rotate(45deg);
-
-      @include md-down-device{
-        height: 28px;
-        width: 28px;
-      }
-
-      svg {
-        stroke: $color-white;
-
-        @include md-down-device{
-          width: 10px;
-        }
+      @include xl-down-device{
+        width: 80px;
       }
     }
+  
+    text {
+      font-size: 14px;
+      transform-origin: center;
+    }
+  }
+  
+  // Animation
+  @keyframes rotate-btn{
+    to{ transform: rotate(360deg); }
+  }
+  .go-down-btn text{
+    animation: rotate-btn 10s linear infinite;
   }
 
   .banner-social {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 20px;
-    z-index: 2;
-
-    @include xl-device{
-      left: 15px;
-    }
-
-    @include xl-down-device {
-      display: none;
-      visibility: hidden;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 17px;
-      top: -110px;
-      width: 1px;
-      height: 90px;
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      left: 17px;
-      bottom: -110px;
-      width: 1px;
-      height: 90px;
-      background-color: rgba(255, 255, 255, 0.2);
-    }
+    margin-top: 50px;
 
     ul {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 15px;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
 
       li {
         min-width: 35px;
         height: 35px;
         border-radius: 50%;
         @include flex(center);
-        background-color: rgba(255, 255, 255, 0.2);
         backdrop-filter: blu(10px);
-        @include transition-3;
+        color: $text-primary;
+
+        &:hover{
+          a{
+            color: $color-primary;
+            i{
+              color: $color-primary;
+            }
+          }
+        }
+
+        a{
+          color: inherit;
+          font-size: 18px;
+          font-weight: 500;
+          @include transition-4;
+
+          i {
+            @include transition-4;
+            margin-right: 10px;
+          }
+        }
 
         &:hover {
-          background-color: $color-primary;
           i {
             color: $text-primary;
           }
         }
-
-        i {
-          color: $color-white;
-          font-size: 15px;
-          @include transition-4;
-        }
       }
     }
   }
+
 
   .banner-shape {
     position: absolute;
@@ -189,28 +153,102 @@
       fill: rgba(255, 255, 255, 0.1);
     }
   }
+
+  .banner-chart{
+    position: absolute;
+    right: 60px;
+    bottom: 30px;
+    z-index: -1;
+    opacity: 0.04;
+    img{
+      max-width: 260px;
+    }
+  }
 }
 
-.banner-circle{
-  position: absolute;
-  right: 5%;
-  top: 30%;
-  animation: rotation 18s linear infinite;
+.provider-wrapper{
+  margin-top: 50px;
+}
+.provider-item{
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.09);
+}
 
-  svg{
-    fill: rgba(255, 255, 255, 0.1);
-    width: 60px;
-    height: 60px;
-  }
+.linear-right{
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background-color: $color-primary-light;
+  filter: blur(140px);
+  z-index: -1;
   @include lg-down-device{
-    display: none;
-    visibility: hidden;
+    width: 250px;
+    height: 250px;
+  }
+}
+.linear-left{
+  position: absolute;
+  left: -90px;
+  top: 90px;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background-color: $color-primary-light;
+  filter: blur(140px);
+  z-index: -1;
+  @include lg-down-device{
+    width: 250px;
+    height: 250px;
+  }
+}
+.linear-center{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 650px;
+  transform: translate(-50%,-50%);
+  height: 650px;
+  border-radius: 50%;
+  background-color: $color-primary-light;
+  filter: blur(140px);
+  z-index: -1;
+  @include lg-down-device{
+    width: 250px;
+    height: 250px;
   }
 }
 .banner-info {
   position: relative;
+  z-index: 1;
 
-  span {
+  .shine{
+    position: absolute;
+    right: 100px;
+    top: -30px;
+    opacity: 0.07;
+    z-index: -1;
+    max-width: 60px;
+    animation: updown 3s linear infinite alternate;
+
+    svg{
+      fill: $text-primary;
+      max-width: 60px;
+      height: 60px;
+    }
+  }
+
+  @keyframes updown {
+    0%{
+      transform: translateY(20px);
+    }
+    100%{
+      transform: translateY(0px);
+    }
+  }
+
+  > span {
     display: inline-block;
     font-size: 15px;
     color: $color-primary;
@@ -223,13 +261,17 @@
   }
 
   h1 {
-    font-size: 65px;
-    color: $color-white;
+    font-size: 90px;
+    color: $text-primary;
     margin-bottom: 30px;
     line-height: 1.1;
+    font-weight: 500;
 
+    @include xl-device{
+      font-size: 55px;
+    }
     @include md-down-device {
-      font-size: 38px;
+      font-size: 40px;
     }
     @include md-device {
       font-size: 42px;
@@ -237,30 +279,70 @@
     @include lg-device {
       font-size: 50px;
     }
+    i{
+      font-size: 75px;
+      color: $text-secondary;
+      margin-right: 10px;
+      @include md-down-device{
+        display: none;
+        visibility: hidden;
+      }
+    }
   }
   p {
-    color: $text-light;
+    color: $text-secondary;
     margin-bottom: 50px;
+
+    @include md-down-device{
+      margin-bottom: 35px;
+    }
   }
 }
 .banner-image {
-  @include xxl-down-device {
-    margin-left: 0px;
-  }
+  position: relative;
+  background-color: $color-primary;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  border: 10px solid $color-white;
 
-  img {
-    min-width: 115%;
-    @include xl-device {
-      min-width: 115%;
-    }
-    @include lg-device {
-      min-width: 110%;
-    }
-    @include lg-down-device {
-      min-width: 100%;
-      max-width: 100%;
-    }
-    // filter: drop-shadow(0px 16px 30px rgba(0, 0, 0, 0.07));
+  #draw {
+    cursor:pointer;
+    left:0;
+    position:absolute;
+    top:0%;
+    width:10%;
+    padding: 15px 10px;
+    border-radius: 20px;
+    margin:20px;
+    background:#F79A7A;
+    border:4px solid white;
+    text-transform:uppercase;
+    letter-spacing: 4px;
+    color:white;
+  }
+  #draw:focus {
+    outline:none;
+  }
+  #svg {
+      top: 60%;
+      left:50%;
+      width:30%;
+      height:80%;
+      position:relative;
+      -webkit-transform:translate3d(-50%,-50%,0);   
+  }
+  .line {
+    stroke-dashoffset:0;
+    box-shadow: 10px 10px 1px black;
+  }
+  .breakpoint{
+    transform:scale(0);
+    position:absolute;
+    -webkit-transform-origin:50% 50%;
+  }
+  .active{
+    transform:scale(1)
   }
 }
 
@@ -321,21 +403,63 @@
   }
 }
 
+.bet-vecotr{
+  margin-top: 60px;
+  max-width: 250px;
+  opacity: 0.18;
+
+  @include lg-down-device{
+    margin-top: 30px;
+  }
+  &.style-two{
+    opacity: 0.07;
+  }
+  img{
+    max-width: 100%;
+  }
+}
+
 
 // About section
 
-.about-section {
+.about-us-section {
+  position: relative;
+  z-index: 1;
 
   @at-root {
     .about-image {
-      img {
-        max-width: 120%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-        @include xl-device {
-          max-width: 110%;
+      @include lg-down-device{
+        display: none;
+        visibility: hidden;
+      }
+
+      .about-1{
+        position: absolute;
+        top: -90px;
+        left: 0px;
+        border-radius: 0 200px 200px 0;
+      }
+      .about-2{
+        position: absolute;
+        top: 150px;
+        left: 140px;
+        border-radius: 200px 0 0 200px;
+        @include xl-down-device{
+          left: 100px;
         }
-        @include xl-down-device {
-          max-width: 100%;
+      }
+     
+      img {
+        max-width: 320px;
+        border-radius: 20px;
+
+        @include lg-device{
+          max-width: 300px;
         }
       }
     }
@@ -355,7 +479,7 @@
     span{
       display: inline-block;
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 400;
     }
 
     &:last-child{
@@ -372,69 +496,9 @@
 .newsletter-box {
   position: relative;
   z-index: 2;
-
-}
-
-
-.input-wrapper {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(3px);
-  padding: 1px;
-  overflow: hidden;
-  border-radius: 50px;
-
-  &:hover {
-    button {
-      i {
-        transform: rotate(45deg);
-      }
-    }
-  }
-
-  input {
-    border: none;
-    height: 50px;
-    border-radius: 50px 0 0 50px;
-    border: none;
-    color: $color-white;
-    padding: 0 15px;
-    font-size: 16px;
-    border-right: none;
-    background-color: $color-dark;
-    border: 1px solid $border-light;
-
-    &::placeholder {
-      color: $text-light;
-    }
-    @include md-down-device{
-      height: 45px;
-    }
-  }
-  button {
-    background-color: $color-primary;
-    color: $text-primary;
-    height: 50px;
-    line-height: 1;
-    display: inline-flex;
-    border-radius: 0px 50px 50px 0px;
-    min-width: 70px;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 10px;
-
-    @include md-down-device{
-      height: 45px;
-    }
-
-    i {
-      margin-left: 5px;
-      font-size: 18px;
-      @include transition-3;
-    }
+  p{
+    color: $text-light;
+    margin-bottom: 20px;
   }
 }
 
@@ -443,6 +507,45 @@
 }
 
 .testimonial-section {
+  position: relative;
+
+  .quote{
+    position: absolute;
+    top: 90px;
+    right: 20px;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    text-align: center;
+    z-index: 99;
+
+    @include xl-device{
+      width: 120px;
+      height: 120px;
+    }
+
+    @include md-down-device{
+      width: 90px;
+      height: 90px;
+      line-height: 90px;
+      top: 120px;
+    }
+
+    i{
+        color: $color-white;
+        font-size: 90px;
+        @include xl-device{
+          font-size: 90px;
+        }
+        @include md-down-device{
+          font-size: 60px;
+        }
+    }
+}
+
+  
   .swiper-slide {
     opacity: 0.35;
   }
@@ -452,17 +555,18 @@
 }
 
 .inner-banner {
-  padding: 130px 10px 70px 10px;
-  background-color: rgba(0, 0, 0, 0.3);
-  background-blend-mode: multiply;
+  padding: 70px 10px 70px 10px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 
-  @include lg-down-device{
-    padding: 110px 10px 50px 10px;
+  @include md-down-device{
+    padding: 50px 10px;
   }
 }
 
 .inner-banner-title {
-  color: $color-white;
+  color: $text-primary;
   font-size: 40px;
   margin-bottom: 12px;
 
@@ -478,16 +582,14 @@
 }
 
 .breadcrumb {
-  justify-content: center;
+  justify-content: flex-start;
+  margin-bottom: 0;
   .breadcrumb-item {
-    color: $color-white;
-    padding-left: var(--bs-breadcrumb-item-padding-x);
-    [dir="rtl"] & {
-      padding-left: unset;
-      padding-right: var(--bs-breadcrumb-item-padding-x);
-    }
+    color: $text-secondary;
+    padding-left: 0;
     a {
       color: $text-light;
+
     }
   }
 }
@@ -497,11 +599,6 @@
   padding-right: var(--bs-breadcrumb-item-padding-x);
   color: $text-light;
   content: var(--bs-breadcrumb-divider, "/");
-  [dir="rtl"] & {
-    float: right;
-    padding-right: unset;
-    padding-left: var(--bs-breadcrumb-item-padding-x);
-  }
 }
 
 .nav-tabs {
@@ -511,7 +608,7 @@
     color: $text-secondary;
     font-size: 16px;
     @include transition-3;
-    padding: 6px 15px;
+    padding: 3px 15px;
     font-weight: 500;
   }
 
@@ -550,7 +647,6 @@
   }
 }
 
-
 .gs_reveal {
   opacity: 0;
   visibility: hidden;
@@ -569,65 +665,42 @@
   z-index: 99;
   margin-left: 0;
 }
-
-.counter-single {
-  padding: 15px 35px;
-  border-radius: 100px;
+.counter-single{
   border: 1px solid $color-border;
+  padding: 10px 15px;
+  border-radius: 90px;
 
-  @include md-down-device{
-    padding: 20px;
-  }
-
-  h3 {
-    font-size: 42px;
-    margin-bottom: 0px;
+  h3{
+    font-size: 50px;
     line-height: 1;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px $text-light;
+    color: $color-primary-light; 
+    -webkit-text-stroke: 1px $color-primary; 
+    text-stroke: 1px $color-primary; 
+
+    @include lg-device{
+      font-size: 35px;
+    }
 
     @include md-down-device{
-      font-size: 24px;
+      font-size: 45px;
     }
   }
-  i {
-    color: $color-primary;
-    font-size: 36px;
-    -webkit-text-fill-color: white;
-    -webkit-text-stroke: 1px $text-light;
-  }
-  p {
-    font-size: 15px;
-    font-weight: 600;
-    color: $color-white;
-
+  i{
+    font-size: 50px;
+    line-height: 1;
+    color: #fff; 
+    -webkit-text-stroke: 1px $text-primary; 
+    text-stroke: 1px $text-primary; 
     @include md-down-device{
-      font-size: 14px;
+      font-size: 20px;
     }
   }
-
-  .counter-icon {
-    margin-bottom: 25px;
-    padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    svg {
-      width: 45px;
-      height: 45px;
-      fill: $color-white;
-
-      @include md-down-device{
-        width: 30px;
-        height: 30px;
-      }
-    }
+  p{
+    margin-bottom: 0;
+    font-weight: 400;
   }
 }
+
 
 .contact-image {
   margin-left: 40px;
@@ -647,37 +720,31 @@
   .image {
     margin-bottom: 30px;
     overflow: hidden;
-    border-radius: 5px;
   }
   .meta-list {
     @include flex(flex-start);
     flex-wrap: wrap;
-    margin-bottom: 18px;
+    margin-bottom: 25px;
     li {
-      margin-right: 50px;
+      margin-right: 25px;
       position: relative;
       &:last-child {
         &::after {
           content: unset;
         }
       }
-      &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: -25px;
-        width: 1px;
-        height: 8px;
-        background-color: $color-border;
-        display: block;
-      }
+
       a {
-        font-size: 14px;
+        font-size: 15px;
+        background-color: $bg-light;
+        padding: 3px 14px;
+        border-radius: 25px;
         color: $text-secondary;
         i {
           font-size: 14px;
-          margin-right: 5px;
+          margin-right: 7px;
+          vertical-align: middle;
+          color: $text-primary;
         }
       }
     }
@@ -704,9 +771,9 @@
   }
   blockquote {
     position: relative;
-    margin: 30px 0px;
-    @include border-gradient-light;
-    padding: 20px 25px;
+    margin: 35px 0px;
+    padding: 30px 30px;
+    background-color: $bg-light;
 
     &::after {
       content: "\F6B0";
@@ -719,7 +786,7 @@
       opacity: 0.15;
     }
     p {
-      margin-bottom: 15px;
+      margin-bottom: 0px;
       font-size: 18px;
       font-style: italic;
       color: $text-primary;
@@ -741,9 +808,9 @@
 
 .blog-share-area {
   margin-top: 50px;
-  border-top: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
-  padding: 15px 0;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+  padding: 20px 0;
   .blog-share {
     display: flex;
     flex-direction: row;
@@ -767,7 +834,6 @@
   align-items: center;
   width: 100%;
   h6 {
-    @include font(15px, 700, var(--text-primary));
     font-family: var(--font-merriw);
     margin: 0;
     margin-right: 10px;
@@ -780,16 +846,17 @@
      gap: 10px;
      li {
        a {
-         @include font(16px, 500, $text-primary);
-         display: block;
-         
+         font-size: 15px;
+         font-weight: 400;
          transition: all 0.4s ease;
-         padding: 8px 12px;
-         background-color: $site-bg;
          line-height: 1;
-         @include border-gradient;
+         background-color: $bg-light;
+         padding: 5px 18px;
+         border-radius: 30px;
+         color: $text-secondary;
          &:hover {
-           color: $color-primary;
+           background-color: $color-primary;
+           color: $color-white;
          }
        }
      }
@@ -798,12 +865,73 @@
 }
 
 .subtitle {
-  margin-bottom: 25px;
-  font-size: 30px;
+  margin-bottom: 15px;
+  font-size: 28px;
   @include md-down-device {
     font-size: 24px;
   }
 }
+
+.signle-comment {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: $bg-light;
+  padding: 25px;
+  margin-bottom: 30px;
+  @include lg-down-device{
+    padding: 20px;
+  }
+  .comment-header {
+    margin-bottom: 15px;
+  }
+  
+  .comment-header .comment-image {
+    max-width: 50px;
+    height: 50px;
+    width: 100%;
+    margin-right: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .comment-header .comment-image img {
+    max-width: 100%;
+  }
+  
+  .comment-header h5 {
+    font-size: 16px;
+    font-weight: 500;
+    color: $text-primary;
+    margin-bottom: 0;
+    margin-right: 3px;
+  }
+  
+  .comment-header span {
+    font-size: 14px;
+    font-weight: 400;
+    color: $text-secondary;
+  }
+  .comment-body{
+    p{
+      margin-bottom: 20px;
+    }
+    .reply-btn{
+      font-size: 14px;
+      font-weight: 500;
+      color: $text-primary;
+      border: 1px solid $color-border;
+      padding: 4px 18px;
+      border-radius: 30px;
+      transition: 0.4s ease;
+      &:hover{
+        background-color: $color-primary;
+        color: $color-white;
+        border: 1px solid $color-primary;
+      }
+    }
+  }
+}
+
 
 .recent-blog-list {
   li {
@@ -845,47 +973,82 @@
 
 .sidebar-widget {
   margin-bottom: 40px;
+  background-color: $bg-light;
+  padding: 25px 25px;
+
+  .sidebar-logo{
+    max-width: 150px;
+    margin-left: 0;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
   .widget-title {
     font-size: 22px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     line-height: 1;
-
-    @include md-down-device {
-      font-size: 20px;
+    position: relative;
+  }
+  ul.tag-list {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-bottom: 0;
+    gap: 12px;
+    li {
+      a {
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.4s ease;
+        padding: 3px 14px;
+        color: $text-primary;
+        border: 1px solid $color-border;
+        &:hover{
+          color: $color-white;
+          border: 1px solid $color-primary;
+        }
+      }
     }
   }
-  @include linear-bg-lighter;
-  @include border-gradient-light;
-  padding: 20px 20px;
-  .blog-sidebar {
-    .sidebar-widget {
-      margin-bottom: 40px;
-      .widget-title {
-        font-size: 22px;
-        margin-bottom: 30px;
-        line-height: 1;
-      }
-      @include linear-bg-lighter;
-      @include border-gradient-light;
-      padding: 20px 20px;
-      ul.tag-list {
-        display: flex;
-        justify-content: start;
-        flex-wrap: wrap;
-        list-style: none;
+  ul.grid-list{
+    li{
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:last-child{
         margin-bottom: 0;
-        gap: 10px;
-        li {
-          a {
-            font-size: 14px;
-            font-weight: 500;
-            background-color: $site-bg;
-            transition: all 0.4s ease;
-            @include border-gradient-light;
-            padding: 2px 10px;
-            color: $text-primary;
-          }
+      }
+      span{
+        display: inline-block;
+        line-height: 1;
+        &:first-child{
+          font-size: 16px;
+          color: $text-primary;
         }
+        &:last-child{
+          font-size: 20px;
+          font-weight: 500;
+          color: $text-primary;
+        }
+      }
+    }
+  }
+  ul.follow-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid $color-border;
+    li{
+      display: inline-block;
+      text-align: center;
+      span{
+        display: inline-block;
+        font-size: 15px;
+        color: $text-secondary;
+        line-height: 1;
       }
     }
   }
@@ -909,91 +1072,14 @@
   }
 }
 
-.sec-design {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-
-  .sec-shape {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    transform: translateY(-250px);
-    opacity: 0.4;
-    z-index: -1;
-    img {
-      width: 100% !important;
-      @include img-adjust;
-    }
-  }
-}
-
-.section-wave-1 {
-  position: absolute;
-  left: 0;
-  bottom: 20px;
-  right: 0;
-  z-index: 1;
-  opacity: 0.7;
-  max-width: 250px;
-  animation: rotation 24s linear infinite;
-
-  svg {
-    fill: rgba(255, 255, 255, 0.05);
-  }
-}
-.section-wave-2 {
-  position: absolute;
-  left: 90%;
-  top: 20px;
-  right: 0;
-  z-index: 1;
-  opacity: 0.7;
-  max-width: 250px;
-  animation: rotation 24s linear infinite;
-
-  svg {
-    fill: rgba(255, 255, 255, 0.05);
-  }
-}
-.section-wave-3 {
-  position: absolute;
-  left: -20px;
-  bottom: -20px;
-  right: 0;
-  z-index: 1;
-  opacity: 0.7;
-  width: 180px;
-  animation: rotation 24s linear infinite;
-
-  svg {
-    max-width: 220px;
-    fill: rgba(255, 255, 255, 0.05);
-  }
-}
-.section-wave-4 {
-  position: absolute;
-  top: 50px;
-  right: -40px;
-  z-index: 1;
-  opacity: 0.7;
-  width: 180px;
-  animation: rotation 24s linear infinite;
-
-  svg {
-    max-width: 250px;
-    fill: rgba(255, 255, 255, 0.05);
-  }
-}
 
 // Swiper slider css
 
 .arrows-style-1{
   .swiper-arrow{
     @include linear-bg;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     @include flex(center);
     border-radius: 50%;
     @include transition-4;
@@ -1024,16 +1110,37 @@
 
 // sercvice area
 
+.service-section{
+  position: relative;
+  z-index: 1;
+}
+
 .service-title-wrap{
   .nav-link{
-    font-size: 35px;
-    font-weight: 700;
+    font-size: 32px;
+    font-weight: 600;
     color: $text-primary;
     transition: 0.5s ease;
-    padding: 25px 0;
+    padding: 22px 0;
     border-top: 1px solid $color-border;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    text-transform: uppercase;
+    border-radius: 0px;
+
+    @include xl-device{
+      font-size: 24px;
+      padding: 12px 0;
+    }
+    @include lg-device{
+      font-size: 22px;
+      padding: 5px 0;
+    }
+    @include lg-down-device{
+      font-size: 20px;
+      padding: 10px 0;
+    }
 
     &:hover{
       i{
@@ -1046,6 +1153,10 @@
       font-size: 50px;
       font-weight: bold;
       @include transition-4;
+
+      @include lg-down-device{
+        font-size: 36px;
+      }
     }
 
     &:last-child{
@@ -1067,8 +1178,18 @@
   &.style-border {
     .accordion-item {
       box-shadow: unset;
-      border-top: 1px solid $text-secondary;
-      border-bottom: 1px solid $text-secondary;
+      border-bottom: 1px solid $color-border;
+
+      &:first-child{
+        border-top: 1px solid $color-border;
+      }
+    }
+  }
+
+  &.style-md{
+    .accordion-button {
+      padding: 20px 30px 20px 0;
+      font-size: 18px;
     }
   }
 
@@ -1082,16 +1203,27 @@
   }
   .accordion-button {
     font-weight: 500;
-    font-size: 20px;
+    font-size: 22px;
     background: transparent;
-    color: $color-white;
+    color: $text-primary;
     font-family: var(--font-merriw);
-    padding: 25px 40px 25px 15px;
+    padding: 30px 30px 30px 0px;
     padding-right: 40px;
     position: relative;
     transition: 0.4s ease-in;
     line-height: 1.6;
     border: unset;
+
+    @include lg-device{
+      font-size: 20px;
+    }
+    @include md-device{
+      font-size: 20px;
+    }
+
+    @include md-down-device{
+      font-size: 18px;
+    }
 
     i {
       margin-right: 15px;
@@ -1106,7 +1238,7 @@
       color: $color-primary;
 
       &::after {
-        color: #fff;
+        color: $color-primary;
       }
     }
 
@@ -1115,8 +1247,8 @@
       border-color: unset;
       outline: 0;
       background: transparent;
-      box-shadow: 5px 2px 30px rgba(0, 0, 0, 0.06);
-      color: $color-white;
+      color: unset;
+      box-shadow: unset;
     }
 
     &::after {
@@ -1131,11 +1263,11 @@
       font-family: "Bootstrap-icons" !important;
       font-size: 20px;
       position: absolute;
-      right: 15px;
+      right: 0px;
       top: 50%;
       transform: translateY(-50%);
       transition: unset;
-      color: $color-white;
+      color: $text-primary;
       border-radius: 50%;
       transition: 0.6s ease;
     }
@@ -1147,18 +1279,18 @@
       content: "\F128";
       top: 50%;
       transform: translateY(-50%);
-      color: $color-white;
+      color: $color-primary;
     }
   }
 
   .accordion-body {
-    padding: 0px 15px 30px 15px;
+    padding: 0px 0px 30px 0px;
 
     p{
-      font-weight: 400;
+      font-weight: 300;
       font-size: 16px;
       text-align: left;
-      color: $color-white !important;
+      color: $text-secondary !important;
       opacity: 0.8;
     }
   }
@@ -1166,7 +1298,6 @@
   .accordion-button:not(.collapsed) {
     box-shadow: unset;
     color: $color-primary;
-    box-shadow: 5px 2px 30px rgba(0, 0, 0, 0.06);
     background: unset;
   }
 
@@ -1184,10 +1315,15 @@
 // Today currency section
 .today-currency-section{
   position: relative;
-  padding-left: 4%;
-  padding-right: 4%;
-  @include linear-bg;
+  padding-left: 10%;
+  padding-right: 10%;
+
+  @include lg-down-device{
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
+
 
 .coin-flip{
   position: absolute;
@@ -1199,6 +1335,11 @@
   transform-style: preserve-3d;
   animation: fly 1.5s ease-in-out 0s infinite alternate;
   filter: drop-shadow(-14px 86px 26px rgba(0, 0, 0, 0.2));
+
+  @include lg-down-device{
+    display: none;
+    visibility: hidden;
+  }
   
   .coin-heads, .coin-tails {
     backface-visibility: hidden;
@@ -1226,6 +1367,123 @@
     50% { transform: rotateY(0deg); }
   }
 }
+
+// Trade Now section
+
+.trade-graph{
+  position: relative;
+}
+
+.tradingview-widget-container{
+  padding: 15px;
+  background-color: $color-white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.introduction-wrapper{
+  text-align: left;
+  padding: 70px 55px;
+  background-color: $bg-light;
+
+  @include lg-down-device{
+    padding: 40px 30px;
+  }
+
+  h4{
+    margin-bottom: 18px;
+  }
+
+  ul{
+    margin-top: 10px;
+    li{
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      i{
+        color: $color-primary;
+        margin-right: 7px;
+        vertical-align: middle;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.advertise-section{
+  overflow: hidden;
+}
+.advertise-slider-wrap{
+  overflow: hidden;
+}
+.advertise-slider{
+  img{
+    min-height: 335px;
+
+    @include lg-down-device{
+      min-height: auto;
+    }
+  }
+}
+
+// Crypto Details
+.crypto-details{
+  .title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .icon{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 12px;
+    }
+    h2{
+      span{
+        display: inline-block;
+        font-size: 20px;
+        color: $text-secondary;
+        font-weight: 400;
+        margin-left: 5px;
+      }
+    }
+  }
+  select{
+    max-width: 150px;
+    border-radius: 30px;
+  }
+  .graph{
+    margin-bottom: 40px;
+  }
+}
+.currency-rate{
+  margin: 20px 0px;
+  h3{
+    font-size: 23px;
+    display: inline-flex;
+  }
+  span{
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 10px;
+  }
+}
+
+.user-meta-info{
+  p{
+    margin-bottom: 0;
+  }
+}
+
+
+
+
+
+
 
 
 

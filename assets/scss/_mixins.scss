@@ -176,7 +176,7 @@
 }
 
 @mixin shadow-1() {
-    box-shadow: 0 3px 15px rgba(29, 38, 38, 0.0309803922);
+    box-shadow: 0 3px 15px rgba(29, 38, 38, 0.07);
 }
 @mixin shadow-2() {
     box-shadow: 0 3px 15px rgba(29, 38, 38, 0.09);
@@ -216,7 +216,7 @@
 }
 
 @mixin linear-bg{
-    background: linear-gradient(170deg,var(--color-primary-light1) 9%,var(--color-primary-light1) 100%),radial-gradient(100% 100% at 30% 10%,var(--color-primary-light1) 0,var(--color-secondary-light1) 100%),linear-gradient(135deg,var(--color-secondary-light1) 0,var(--color-primary-light1) 50%),radial-gradient(100% 100% at 70% 0,var(--color-secondary-light1) 0,transparent 100%),linear-gradient(280deg,var(--color-primary-light1) 0,
+    background: linear-gradient(170deg,var(--color-primary-light1) 9%,var(--color-primary-light1) 100%),radial-gradient(100% 100% at 30% 10%,var(--color-primary-light1) 0,var(--color-primary-light1) 100%),linear-gradient(135deg,var(--color-primary-light1) 0,var(--color-primary-light1) 50%),radial-gradient(100% 100% at 70% 0,var(--color-primary-light1) 0,transparent 100%),linear-gradient(280deg,var(--color-primary-light1) 0,
   transparent 100%);
 }
 

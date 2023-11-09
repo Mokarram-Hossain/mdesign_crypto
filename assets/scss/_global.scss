@@ -1,30 +1,24 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 :root {
   color-scheme: light;
-  --font-primary: 'Albert Sans', sans-serif;
-  --font-secondary: 'Prompt', sans-serif;
-
-  // --color-primary: rgb(254, 175, 25);
-  // --color-primary: rgb(225, 180, 56);
-  --color-primary: rgb(0, 169, 255);
-  --color-primary-light1: rgba(0, 169, 255, 0.01);
-  --color-primary-light2: rgba(0, 169, 255, 0.01);
-  --color-secondary: rgb(25, 211, 218);
-  --color-secondary-light1: rgba(25, 211, 218,0.05);
-
-
+  --font-primary: 'Kanit', sans-serif;
+  --font-secondary: 'Kanit', sans-serif;
+  --color-primary: #fe710d;
+  --color-primary-light: rgba(234, 125, 24,0.2);
+  --color-primary-light-2: rgba(234, 125, 24,0.08);
   --color-primary-text: #ffffff;
   --text-primary: #150801;
   --text-secondary: #777;
   --text-light: #b7b7b7;
   --color-border: #dadce0;
+  --border-primary: rgba(234, 125, 24,0.4);
   --border-light:rgba(255,255,255,.2);
   --color-white: #fff;
   --color-gray-1: #eff2f7;
-  --color-dark: #131301;
-  --bg-light: #f7f7f7;
+  --color-dark: #101010;
+  --bg-light: #f9f9f9;
   --site-bg: #ffffff;
   --card-bg: #fff;
   --topbar-bg: #fff;
@@ -40,14 +34,14 @@
 $font-primary: var(--font-primary);
 $font-secondary: var(--font-secondary);
 $color-primary: var(--color-primary);
-$color-primary-light1: var(--color-primary-light1);
-$color-primary-light2: var(--color-primary-light2);
-$color-secondary: var(--color-secondary);
+$color-primary-light: var(--color-primary-light);
+$color-primary-light2: var(--color-primary-light-2);
 $color-primary-text: var(--color-primary-text);
 $text-primary: var(--text-primary);
 $text-secondary: var(--text-secondary);
 $text-light: var(--text-light);
 $color-border: var(--color-border);
+$border-primary: var(--border-primary);
 $border-light: var(--border-light);
 $color-gray-1: var(--color-gray-1);
 $color-dark: var(--color-dark);
@@ -56,6 +50,7 @@ $site-bg: var(--site-bg);
 $card-bg: var(--card-bg);
 $topbar-bg: var(--topbar-bg);
 $sidebar-bg: var(--sidebar-bg);
+$bg-light: var(--bg-light);
 
 $color-success: var(--color-success);
 $color-success-light: var(--color-success-light);
@@ -91,7 +86,7 @@ h6 {
   color: $text-primary;
   margin-bottom: 0;
   font-family: $font-secondary;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25;
 }
 
@@ -101,7 +96,6 @@ h4 {
 
 p {
   color: $text-secondary;
-  margin-bottom: 0;
 }
 r a,
 a:active,
@@ -119,14 +113,14 @@ li {
 body {
   display: flex;
   flex-direction: column;
-  line-height: 1.5;
+  line-height: 1.55;
   font-family: $font-primary;
-  font-weight: 400;
+  font-weight: 300;
   color: $text-secondary;
   font-size: 16px;
 
   @include md-down-device {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 img {
@@ -205,7 +199,7 @@ button {
   align-items: center;
   justify-content: center;
   font-family: $font-primary;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1;
   text-align: center;
   text-decoration: none;
@@ -232,24 +226,41 @@ button {
     z-index: 1;
     &:hover {
       &::before {
-        transform: translateX(0%);
+        width: 100%;
+        opacity: 1;
+      }
+      &::after {
+        width: 100%;
         opacity: 1;
       }
     }
     &::before {
       content: "";
       display: block;
+      width: 100%;
+      height: 50%;
       position: absolute;
       left: 0;
-      top: 0;
-      bottom: 0;
-      transform: translateX(-100%);
+      top: 0px;
+      background: $color-dark;
+      width: 30%;
+      @include transition-5;
       z-index: -1;
       opacity: 0;
-      @include transition-4;
+    }
+    &::after {
+      content: "";
+      display: block;
       width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, var(--gradient-4), var(--gradient-5), var(--gradient-6) 80%);
+      height: 50%;
+      position: absolute;
+      right: 0;
+      bottom: 0px;
+      background: $color-dark;
+      width: 30%;
+      @include transition-5;
+      z-index: -1;
+      opacity: 0;
     }
   }
 
@@ -257,6 +268,45 @@ button {
     color: $color-primary;
     border: 1px solid $color-primary;
     background-color: transparent;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    &:hover{
+      color: $color-white;
+      border: 1px solid $color-dark;
+      &::before{
+        width: 100%;
+      }
+      &::after{
+        width: 100%;
+      }
+    }
+    &::before { 
+      content: "";
+      display: block;
+      width: 100%;
+      height: 50%;
+      position: absolute;
+      left: 0;
+      top: 0px;
+      background: $color-dark;
+      width: 0px;
+      @include transition-4;
+      z-index: -1;
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 50%;
+      position: absolute;
+      right: 0;
+      bottom: 0px;
+      background: $color-dark;
+      width: 0px;
+      @include transition-4;
+      z-index: -1;
+    }
   }
 
   &.btn--secondary {
@@ -275,15 +325,15 @@ button {
   }
 
   &.btn--md {
-    padding: 12px 16px;
-    font-size: 15px;
+    padding: 12px 20px;
+    font-size: 16px;
     @include md-down-device {
       padding: 10px 14px;
     }
   }
 
   &.btn--lg {
-    padding: 18px 28px;
+    padding: 16px 28px;
     font-size: 18px;
 
     @include md-down-device {
@@ -295,27 +345,28 @@ button {
   }
 }
 
-.read-more-btn{
-  font-size: 16px;
+.read-more-btn {
   color: $text-primary;
-  font-weight: 700;
-  transition: 0.6s ease;
-  &:hover{
-    i{
-      transform: rotate(45deg);
-    }
-  }
+  font-weight: 600;
 
-  i{
-    font-size: 18px;
+  i {
+    font-size: 16px;
     width: 40px;
     height: 40px;
-    line-height: 41px;
+    line-height: 40px;
     border-radius: 50%;
     background-color: $color-primary;
     text-align: center;
     margin-left: 15px;
     transition: 0.6s ease;
+    color: $color-white;
+    transform: rotate(0deg);
+  }
+
+  &:hover {
+    i {
+      transform: rotate(45deg);
+    }
   }
 }
 
@@ -323,6 +374,12 @@ button {
   margin-bottom: 60px;
   @include md-down-device {
     margin-bottom: 45px;
+  }
+}
+.mb-90 {
+  margin-bottom: 90px;
+  @include md-down-device {
+    margin-bottom: 60px;
   }
 }
 .mb-50 {
@@ -378,11 +435,28 @@ button {
 
 
   h2 {
-    font-size: 42px;
-    font-weight: 600;
+    font-size: 50px;
+    font-weight: 500;
     margin-bottom: 10px;
     margin-top: -7px;
     position: relative;
+    display: inline-block;
+
+    &::before{
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: -5px;
+      width: 50px;
+      height: 50px;
+      background-color: $color-primary-light;
+      border-radius: 50%;
+      z-index: -1;
+
+      @include lg-down-device{
+        left: 0;
+      }
+  }
 
     @include md-down-device {
       font-size: 30px;
@@ -390,17 +464,14 @@ button {
     @include md-device {
       font-size: 34px;
     }
-    @include lg-device {
-      font-size: 36px;
+    @include xl-device {
+      font-size: 40px;
     }
   }
   P {
     margin-bottom: 0px;
     font-size: 16px;
     color: $text-secondary;
-    @include md-down-device {
-      font-size: 14px;
-    }
   }
 }
 
@@ -410,7 +481,7 @@ button {
 }
 
 .img-adjust {
-  background-size: cover;
+  background-size: cover !important;
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -448,9 +519,14 @@ button {
 
 // Language dropdown
 .dropdown-language {
-  width: 40px;
+
+
   .dropdown {
     .lan-select {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 8px;
       cursor: pointer;
       .flag-icon {
         line-height: 16px;
@@ -466,6 +542,7 @@ button {
       background-clip: padding-box;
       border-radius: 0;
       border: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       .dropdown-item {
         color: $text-primary;
         display: flex;
@@ -509,7 +586,7 @@ button {
       border: none;
       li {
         &:first-child {
-          background-color: $color-primary-light1;
+          background-color: $color-primary-light;
           color: $color-primary-text;
           margin-bottom: 10px;
           span {
@@ -557,7 +634,7 @@ button {
   width: 45px;
   text-align: center;
   line-height: 50px;
-  background: #fff;
+  background: $color-primary;
   color: var(--color-primary);
   border-radius: 50%;
   cursor: pointer;
@@ -569,7 +646,7 @@ button {
     left: 0;
     height: 100%;
     width: 100%;
-    background: #fff;
+    background: $color-primary;
     border-radius: 50%;
     display: inline-block;
     animation: video-pulse 3s linear infinite;
@@ -593,6 +670,266 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color:  #00152B;
+    color:  $color-white;
+  }
+}
+
+.bg-color{
+  background-color: $color-dark;
+}
+
+/*=======================================
+ 04.Magic Cursor
+=======================================*/
+#magic-cursor {
+  position: absolute;
+  display: none;
+  width: 25px;
+  height: 25px;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  padding: 20px;
+}
+body.tt-magic-cursor #magic-cursor {
+  display: block;
+}
+#ball {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  pointer-events: none;
+  border-style: solid;
+  border-radius: 50%;
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+  /* Note: border width handled through JS */
+}
+.cursor-style-two{
+  border-radius: 0% !important;
+  background-color: var(--color-white) !important;
+  color: #000 !important;
+  padding: 15px;
+}
+/* Ball view
+============= */
+#ball.ball-view {
+  background-color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-white);
+  line-height: 1.2;
+  text-align: center;
+}
+#ball .ball-view-inner {
+  padding: 0 0px;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+  font-size: 16px;
+}
+
+/* Ball drag
+============= */
+#ball .ball-drag {
+  position: absolute;
+  display: block;
+  width: 100%;
+  padding: 0 0px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-white);
+  line-height: 1.2;
+  text-align: center;
+  transition:  0.3s;
+}
+#ball .ball-drag::before,
+#ball .ball-drag::after {
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+  font-size: 16px;
+  color: var(--color-white);
+  height: 15px;
+  line-height: 15px;
+  /* Font Awesome */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+#ball .ball-drag::before {
+  content: "\f060"; /* Font Awesome */
+  left: 0;
+  transform: translate3d(-30px, 0, 0);
+  transition:  0.35s;
+}
+#ball .ball-drag::after {
+  content: "\f061"; /* Font Awesome */
+  right: 0;
+  transform: translate3d(30px, 0, 0);
+  transition:  0.35s;
+}
+/* Ball close
+============== */
+#ball.ball-close-enabled {
+  opacity: 1 !important;
+}
+#ball .ball-close {
+  position: absolute;
+  padding: 0 0px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-white);
+  line-height: 1;
+  text-align: center;
+}
+/* Magnetic cursor
+=================== */
+
+// Nav style
+
+.nav-style-one{
+  ul.nav{
+    border-bottom: unset;
+    li{
+      a.nav-link{
+        border-radius: 0px;
+        min-width: 130px;
+        border: 1px solid $color-primary;
+        padding: 12px 25px !important;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        color: $text-primary;
+
+        &.active{
+          background-color: $color-primary;
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
+
+.nav-style-two{
+  ul.nav{
+    border-bottom: unset;
+    gap: 10px;
+    li{
+      a.nav-link{
+        min-width: 130px;
+        border: 1px solid $color-primary;
+        padding: 9px 18px !important;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        border-radius: 30px;
+        color: $text-primary;
+
+        &.active{
+          background-color: $color-primary;
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
+.nav-style-three{
+  ul.nav{
+    border-bottom: unset;
+    gap: 10px;
+    li{
+      a.nav-link{
+        min-width: 130px;
+        border: 1px solid $bg-light;
+        background-color: $bg-light;
+        padding: 9px 18px !important;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        border-radius: 30px;
+        color: $text-primary;
+        &:hover{
+          background-color: $color-primary;
+          color: $color-white;
+        }
+
+        i{
+          margin-right: 5px;
+          font-size: 14px;
+        }
+
+        &.active{
+          background-color: $color-primary;
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
+
+.swiper{
+  padding: 12px;
+  margin: -12px;
+}
+
+.card-pagination{
+  text-align: center;
+  margin-top: 40px;
+  .swiper-pagination-bullet{
+    width: 18px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: $color-primary;
+
+    &.swiper-pagination-bullet-active{
+      background-color: $color-primary;
+    }
+  }
+}
+.pagination{
+  gap: 15px;
+  .page-item{
+    &:first-child{
+      .page-link{
+        border-radius: 30px;
+      }
+    }
+    &:last-child{
+      .page-link{
+        border-radius: 30px;
+      }
+    }
+  }
+
+  .page-link{
+    padding: 12px 16px !important;
+    line-height: 1;
+    min-width: 42px;
+    border-radius: 50%;
+    text-align: center;
+    color: $text-primary;
+    font-size: 15px;
+    transition: 0.4s ease;
+    background-color: $bg-light;
+    &:focus{
+      box-shadow: unset;
+    }
+    &:hover{
+      background-color: $color-primary;
+      color: $color-white;
+      border: 1px solid $color-primary;
+    }
+    &.active{
+      background-color: $color-primary;
+      color: $color-white;
+      border: 1px solid $color-primary;
+    }
   }
 }
